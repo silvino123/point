@@ -1,0 +1,291 @@
+extends ../core/core.layout.pug
+block pagetitle
+    - pageTitle = 'FooTable'
+block content
+    .container-fluid
+        .cardbox
+            .cardbox-heading
+                .cardbox-title Row Toggle
+                small Setup which column has the toggler, or hide it completely
+            .cardbox-body
+                .table-responsive: table.table.footable.toggle-arrow-tiny
+                    thead
+                        tr
+                            th(data-toggle="true") ID
+                            th First Name
+                            th Last Name
+                            th(data-hide="all") Job Title
+                            th(data-hide="all") Started On
+                            th(data-hide="all") Date of Birth
+                    tbody
+                        tr(data-expanded='true')
+                            td 1
+                            td Dennise
+                            td Fuhrman
+                            td High School History Teacher
+                            td November 8th 2011
+                            td July 25th 1960
+                        tr
+                            td 2
+                            td Elodia
+                            td Weisz
+                            td Wallpaperer Helper
+                            td October 15th 2010
+                            td March 30th 1982
+                        tr
+                            td 3
+                            td Raeann
+                            td Haner
+                            td Internal Medicine Nurse Practitioner
+                            td November 28th 2013
+                            td February 26th 1966
+                        tr
+                            td 4
+                            td Junie
+                            td Landa
+                            td Offbearer
+                            td October 31st 2010
+                            td March 29th 1966
+                        tr
+                            td 5
+                            td Solomon
+                            td Bittinger
+                            td Roller Skater
+                            td December 29th 2011
+                            td September 22nd 1964
+                        tr
+                            td 6
+                            td Bar
+                            td Lewis
+                            td Clown
+                            td November 12th 2012
+                            td August 4th 1991
+                        tr
+                            td 7
+                            td Usha
+                            td Leak
+                            td Ships Electronic Warfare Officer
+                            td August 14th 2012
+                            td November 20th 1979
+                        tr
+                            td 8
+                            td Lorriane
+                            td Cooke
+                            td Technical Services Librarian
+                            td September 21st 2010
+                            td April 7th 1969
+
+        .cardbox
+            .cardbox-heading
+                .float-right
+                    span.nr-2 Sort by: 
+                    .btn-group.btn-group-sm(role='group')
+                        a.wd-xxs.btn.btn-secondary.sort-column(href='#sort' data-index='0') ID
+                        a.wd-xxs.btn.btn-secondary.sort-column(href='#sort' data-index='1') First
+                        a.wd-xxs.btn.btn-secondary.sort-column(href='#sort' data-index='4') DOB
+                        a.wd-xxs.btn.btn-secondary.sort-column(href='#sort' data-index='5') Status
+                .cardbox-title Sort By Columns
+                small Select how to sort each column
+            .cardbox-body
+                .table-responsive
+                    table.table.footable-sort
+                        thead
+                            tr
+                                th(data-type='numeric' data-sort-initial='true')
+                                    | ID
+                                th
+                                    | First Name
+                                th(data-sort-ignore='true')
+                                    | Last Name
+                                th
+                                    | Job Title
+                                th(data-type='numeric')
+                                    | DOB
+                                th
+                                    | Status
+                        tbody
+                            tr
+                                td 2
+                                td Isidra
+                                td
+                                    a(href='#') Boudreaux
+                                td Traffic Court Referee
+                                td(data-value='78025368997') 22 Jun 1972
+                                td(data-value='1')
+                                    span.status-metro.status-active(title='Active') Active
+                            tr
+                                td 3
+                                td Shona
+                                td Woldt
+                                td
+                                    a(href='#') Airline Transport Pilot
+                                td(data-value='370961043292') 3 Oct 1981
+                                td(data-value='2')
+                                    span.status-metro.status-disabled(title='Disabled') Disabled
+                            tr
+                                td 1
+                                td Granville
+                                td Leonardo
+                                td Business Services Sales Representative
+                                td(data-value='-22133780420') 19 Apr 1969
+                                td(data-value='3')
+                                    span.status-metro.status-suspended(title='Suspended') Suspended
+                            tr
+                                td 8
+                                td Easer
+                                td Dragoo
+                                td Drywall Stripper
+                                td(data-value='250833505574') 13 Dec 1977
+                                td(data-value='1')
+                                    span.status-metro.status-active(title='Active') Active
+                            tr
+                                td 4
+                                td Maple
+                                td Halladay
+                                td Aviation Tactical Readiness Officer
+                                td(data-value='694116650726') 30 Dec 1991
+                                td(data-value='3')
+                                    span.status-metro.status-suspended(title='Suspended') Suspended
+                            tr
+                                td 5
+                                td Maxine
+                                td
+                                    a(href='#') Woldt
+                                td
+                                    a(href='#') Business Services Sales Representative
+                                td(data-value='561440464855') 17 Oct 1987
+                                td(data-value='2')
+                                    span.status-metro.status-disabled(title='Disabled') Disabled
+                            tr
+                                td 6
+                                td Lorraine
+                                td Mcgaughy
+                                td Hemodialysis Technician
+                                td(data-value='437400551390') 11 Nov 1983
+                                td(data-value='2')
+                                    span.status-metro.status-disabled(title='Disabled') Disabled
+                            tr
+                                td 9
+                                td Lizzee
+                                td
+                                    a(href='#') Goodlow
+                                td Technical Services Librarian
+                                td(data-value='-257733999319') 1 Nov 1961
+                                td(data-value='3')
+                                    span.status-metro.status-suspended(title='Suspended') Suspended
+                            tr
+                                td 10
+                                td Judi
+                                td Badgett
+                                td Electrical Lineworker
+                                td(data-value='362134712000') 23 Jun 1981
+                                td(data-value='1')
+                                    span.status-metro.status-active(title='Active') Active
+                            tr
+                                td 7
+                                td Lauri
+                                td Hyland
+                                td Blackjack Supervisor
+                                td(data-value='500874333932') 15 Nov 1985
+                                td(data-value='3')
+                                    span.status-metro.status-suspended(title='Suspended') Suspended
+
+
+        .cardbox
+            .cardbox-heading
+                .float-right
+                    input#filter-input.form-control.input-sm(type='text' placeholder='Search filter..')
+                .cardbox-title Filtering columns
+                small Enable column filtering on table by adding 
+                    code data-filter='#input-id'
+            .cardbox-body
+                .table-responsive: table.table.footable(data-filter='#filter-input')
+                    thead
+                        tr
+                            th ID
+                            th First Name
+                            th Last Name
+                            th Job Title
+                            th Started On
+                            th Date of Birth
+                            th Info
+                    tbody
+                        tr
+                            td 1
+                            td Dennise
+                            td Fuhrman
+                            td High School History Teacher
+                            td November 8th 2011
+                            td July 25th 1960
+                            td
+                                a(href='#placeholder') Info link
+                        tr
+                            td 2
+                            td Elodia
+                            td Weisz
+                            td Wallpaperer Helper
+                            td October 15th 2010
+                            td March 30th 1982
+                            td
+                                a(href='#placeholder') Info link
+                        tr
+                            td 3
+                            td Raeann
+                            td Haner
+                            td Internal Medicine Nurse Practitioner
+                            td November 28th 2013
+                            td February 26th 1966
+                            td
+                                a(href='#placeholder') Info link
+                        tr
+                            td 4
+                            td Junie
+                            td Landa
+                            td Offbearer
+                            td October 31st 2010
+                            td March 29th 1966
+                            td
+                                a(href='#placeholder') Info link
+                        tr
+                            td 5
+                            td Solomon
+                            td Bittinger
+                            td Roller Skater
+                            td December 29th 2011
+                            td September 22nd 1964
+                            td
+                                a(href='#placeholder') Info link
+                        tr
+                            td 6
+                            td Bar
+                            td Lewis
+                            td Clown
+                            td November 12th 2012
+                            td August 4th 1991
+                            td
+                                a(href='#placeholder') Info link
+                        tr
+                            td 7
+                            td Usha
+                            td Leak
+                            td Ships Electronic Warfare Officer
+                            td August 14th 2012
+                            td November 20th 1979
+                            td
+                                a(href='#placeholder') Info link
+                        tr
+                            td 8
+                            td Lorriane
+                            td Cooke
+                            td Technical Services Librarian
+                            td September 21st 2010
+                            td April 7th 1969
+                            td
+                                a(href='#placeholder') Info link
+
+block vendor_css
+    // FooTable
+    link(rel='stylesheet', href='vendor/footable/css/footable.core.css')
+block vendor_js
+    // FooTable
+    script(src='vendor/footable/dist/footable.all.min.js')

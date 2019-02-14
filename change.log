@@ -1,0 +1,215 @@
+`1.4 09/05/2018`
+
+- Updated all projects to stable **Bootstrap 4.1.1**
+- Updated **Angular to 6.0.0** (angular6 folder)
+- Updated **@angular/cli to 6.0.0**
+- Moved Bower dependencies to NPM on html5jquery
+- Removed Bower
+- Updated html5jquery project dependencies
+
+    Added files:
+
+    A   angular6/dasha (renamed from angular5/ng4)
+    A   angular6/dasha/src/browserslist
+    A   angular6/dasha/angular.json
+
+    Modified files:
+
+    M   angular6/dasha/e2e/protractor.conf.js
+    M   angular6/dasha/e2e/src/app.e2e-spec.ts
+    M   angular6/dasha/e2e/src/app.po.ts
+    M   angular6/dasha/package-lock.json
+    M   angular6/dasha/package.json
+    M   angular6/dasha/src/app/layout/header/header.component.scss
+    M   angular6/dasha/src/app/layout/header/search/search.component.html
+    M   angular6/dasha/src/app/layout/settings/settings.component.html
+    M   angular6/dasha/src/app/layout/sidebar/sidebar.component.scss
+    M   angular6/dasha/src/app/routes/elements/bootstrapui/bootstrapui.component.html
+    M   angular6/dasha/src/app/routes/forms/standard/standard.component.html
+    M   angular6/dasha/src/app/routes/forms/validation/validation.component.html
+    M   angular6/dasha/src/app/routes/pages/settings/settings.component.html
+    M   angular6/dasha/src/app/routes/pages/wall/wall.component.html
+    M   angular6/dasha/src/app/routes/user/lock/lock.component.html
+    M   angular6/dasha/src/app/routes/user/recover/recover.component.html
+    M   angular6/dasha/src/app/routes/user/signin/signin.component.html
+    M   angular6/dasha/src/app/routes/user/signinv2/signinv2.component.html
+    M   angular6/dasha/src/app/shared/styles/bootstrap/**/*.scss
+    M   angular6/dasha/src/app/shared/styles/common/buttons-extra.scss
+    M   angular6/dasha/src/app/shared/styles/common/dropdown-extra.scss
+    M   angular6/dasha/src/app/shared/styles/common/mixins.scss
+    M   angular6/dasha/src/app/shared/styles/common/variables.scss
+    M   angular6/dasha/src/environments/environment.ts
+    M   angular6/dasha/src/index.html
+    M   angular6/dasha/src/karma.conf.js
+    M   angular6/dasha/src/polyfills.ts
+    M   angular6/dasha/src/styles.scss
+    M   angular6/dasha/src/test.ts
+    M   angular6/dasha/src/tsconfig.app.json
+    M   angular6/dasha/src/tsconfig.spec.json
+    M   angular6/dasha/src/tslint.json
+    M   angular6/dasha/tsconfig.json
+    M   angular6/dasha/tslint.json
+
+    M   html5jquery/dist/*.html
+    M   html5jquery/src/app/components/bootstrap/**/*.scss
+    M   html5jquery/src/app/components/charts/flot.pug
+    M   html5jquery/src/app/components/charts/radial.pug
+    M   html5jquery/src/app/components/common/buttons-extra.scss
+    M   html5jquery/src/app/components/common/dropdown-extra.scss
+    M   html5jquery/src/app/components/common/mixins.scss
+    M   html5jquery/src/app/components/common/variables.scss
+    M   html5jquery/src/app/components/core/core.layout.pug
+    M   html5jquery/src/app/components/dashboard/dashboard.pug
+    M   html5jquery/src/app/components/elements/toaster.pug
+    M   html5jquery/src/app/components/forms/forms.advanced.pug
+    M   html5jquery/src/app/components/forms/forms.standard.pug
+    M   html5jquery/src/app/components/forms/validation.pug
+    M   html5jquery/src/app/components/forms/wizard.pug
+    M   html5jquery/src/app/components/forms/xeditable.pug
+    M   html5jquery/src/app/components/header/header-search.tpl.pug
+    M   html5jquery/src/app/components/header/header.scss
+    M   html5jquery/src/app/components/kanban/kanban.pug
+    M   html5jquery/src/app/components/maps/datamaps.pug
+    M   html5jquery/src/app/components/pages/calendar.pug
+    M   html5jquery/src/app/components/pages/settings.pug
+    M   html5jquery/src/app/components/pages/wall.pug
+    M   html5jquery/src/app/components/settings/settings.tpl.pug
+    M   html5jquery/src/app/components/tables/bootgrid.js
+    M   html5jquery/src/app/components/tables/bootgrid.pug
+    M   html5jquery/src/app/components/tables/bootgrid.scss
+    M   html5jquery/src/app/components/tables/datatable.pug
+    M   html5jquery/src/app/components/user/lock.pug
+    M   html5jquery/src/app/components/user/recover.pug
+    M   html5jquery/src/app/components/user/signin.pug
+    M   html5jquery/src/app/components/user/signin2.pug
+    M   html5jquery/src/gulp.config.js
+    M   html5jquery/src/gulpfile.js
+    M   html5jquery/src/package-lock.json
+    M   html5jquery/src/package.json
+
+
+`1.3 11/12/2017`
+
+- Updated to **angular5**
+- Updated to @angular/cli 1.5.4
+- Fix footable version (downgrade to 2.0.3)
+- Fix z-index issue with input-groups and header
+- Fix datatable popup styles
+- Fix dropdown position used from plugins
+- Updated documentation
+
+    Renamed files:
+
+    angular4                         --> angular5
+    documentation/angular4           --> documentation/angular5
+
+    Modified files:
+
+    A   html5jquery-gulp/dist/css/app-rtl.css
+    A   html5jquery-gulp/dist/css/app.css
+    A   html5jquery-gulp/dist/footable.html
+    A   html5jquery-gulp/dist/js/app.js
+    A   html5jquery-gulp/src/app/components/bootstrap/reset.scss
+    A   html5jquery-gulp/src/app/components/forms/forms.advanced.js
+    A   html5jquery-gulp/src/app/components/forms/forms.advanced.scss
+    A   html5jquery-gulp/src/app/components/header/header.scss
+    A   html5jquery-gulp/src/app/components/tables/footable.js
+    A   html5jquery-gulp/src/app/components/tables/footable.pug
+    A   html5jquery-gulp/src/bower.json
+    A   html5jquery-gulp/src/gulp.config.js
+
+
+`1.2 9/11/2017`
+
+- Updated to **Bootstrap 4 beta.2**
+- New view kanban board (dragula)
+- New view settings
+- New view signinv2 (background image)
+- New view signupv2 (background image)
+- Added new theme light-sidebar/dark-content
+- Fix httpClient issue (angular4)
+- Fix datatable sort icons
+
+    New files:
+
+    A   angular4/ng4/src/app/routes/kanban/kanban.module.ts
+    A   angular4/ng4/src/app/routes/kanban/kanban/kanban.component.html
+    A   angular4/ng4/src/app/routes/kanban/kanban/kanban.component.scss
+    A   angular4/ng4/src/app/routes/kanban/kanban/kanban.component.ts
+    A   angular4/ng4/src/app/routes/pages/settings/settings.component.html
+    A   angular4/ng4/src/app/routes/pages/settings/settings.component.scss
+    A   angular4/ng4/src/app/routes/pages/settings/settings.component.ts
+    A   angular4/ng4/src/app/routes/user/signinv2/signinv2.component.html
+    A   angular4/ng4/src/app/routes/user/signinv2/signinv2.component.scss
+    A   angular4/ng4/src/app/routes/user/signinv2/signinv2.component.ts
+    A   angular4/ng4/src/app/routes/user/signupv2/signupv2.component.html
+    A   angular4/ng4/src/app/routes/user/signupv2/signupv2.component.scss
+    A   angular4/ng4/src/app/routes/user/signupv2/signupv2.component.ts
+    A   angular4/ng4/src/app/shared/styles/bootstrap/mixins/_caret.scss
+    A   angular4/ng4/src/assets/img/pic7.jpg
+    A   html5jquery/dist/img/pic7.jpg
+    A   html5jquery/dist/kanban.html
+    A   html5jquery/dist/settings.html
+    A   html5jquery/dist/signin2.html
+    A   html5jquery/dist/signup2.html
+    A   html5jquery/src/app/components/bootstrap/mixins/_caret.scss
+    A   html5jquery/src/app/components/kanban/kanban.css
+    A   html5jquery/src/app/components/kanban/kanban.js
+    A   html5jquery/src/app/components/kanban/kanban.pug
+    A   html5jquery/src/app/components/pages/settings.pug
+    A   html5jquery/src/app/components/user/signin2.pug
+    A   html5jquery/src/app/components/user/signup2.pug
+    A   html5jquery/src/app/images/pic7.jpg
+
+    Modified files:
+
+    M   angular4/ng4/package-lock.json
+    M   angular4/ng4/package.json
+    M   angular4/ng4/src/app/layout/settings/settings.component.html
+    M   angular4/ng4/src/app/routes/charts/flot/flot.component.ts
+    M   angular4/ng4/src/app/routes/dashboard/dashboard/dashboard.component.html
+    M   angular4/ng4/src/app/routes/menu.ts
+    M   angular4/ng4/src/app/routes/pages/calendar/calendar.component.scss
+    M   angular4/ng4/src/app/routes/pages/pages.module.ts
+    M   angular4/ng4/src/app/routes/routes.module.ts
+    M   angular4/ng4/src/app/routes/routes.ts
+    M   angular4/ng4/src/app/routes/tables/datatables/datatables.component.ts
+    M   angular4/ng4/src/app/routes/user/user.module.ts
+    M   angular4/ng4/src/app/shared/styles/bootstrap/_functions.scss
+    M   angular4/ng4/src/app/shared/styles/bootstrap/_variables.scss
+    M   angular4/ng4/src/app/shared/styles/bootstrap/mixins.scss
+    M   angular4/ng4/src/app/shared/styles/bootstrap/mixins/*
+    M   angular4/ng4/src/app/shared/styles/bootstrap/reset.scss
+    M   angular4/ng4/src/app/shared/styles/common/buttons-extra.scss
+    M   angular4/ng4/src/app/shared/styles/common/themes.scss
+    M   angular4/ng4/src/app/shared/styles/utils/utils.scss
+    M   html5jquery/dist/*.html
+    M   html5jquery/dist/js/app.js
+    M   html5jquery/src/app/components/bootstrap/_functions.scss
+    M   html5jquery/src/app/components/bootstrap/_variables.scss
+    M   html5jquery/src/app/components/bootstrap/mixins.scss
+    M   html5jquery/src/app/components/bootstrap/mixins/*
+    M   html5jquery/src/app/components/bootstrap/reset.scss
+    M   html5jquery/src/app/components/common/buttons-extra.scss
+    M   html5jquery/src/app/components/common/themes.scss
+    M   html5jquery/src/app/components/dashboard/dashboard.pug
+    M   html5jquery/src/app/components/settings/settings.tpl.pug
+    M   html5jquery/src/app/components/sidebar/sidebar.tpl.pug
+    M   html5jquery/src/app/components/tables/datatable.scss
+    M   html5jquery/src/app/components/utils/utils.scss
+    M   html5jquery/src/bower.json
+
+
+`1.1 3/10/2017`
+
+- Updated **Bootstrap 4 beta**
+- Updated @angular/cli to 1.3.2
+- Updated angular to v4.3.6
+- Added RTL support (only static html5)
+- Fix footer-fixed z-index issue
+- Fix angular ui-select dropdown position
+- Updated documentation
+
+`1.0 1/08/2017`
+
+- Initial release

@@ -1,0 +1,780 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>Dasha Docs</title><link rel="stylesheet" href="assets/styles.css"></head><body><div class="inf-header-wrapper"><header class="inf-header"><h1 class="title"><a href="http://themicon.co/dasha">Dasha Docs</a></h1><div class="support"><a href="https://wrapbootstrap.com/user/themicon#contact" class="btn-support">Contact support</a></div></header></div><div class="inf-wrapper"><nav class="inf-menu"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#structure">Structure</a></li><li><a href="#build">Build</a></li><li><a href="#usage">Usage</a></li><li><a href="#components">Components</a></li><li><a href="#customization">Customization</a></li><li><a href="#credits">Credits</a></li></ul><div class="inf-menu-meta"><span>By:</span><a href="https://twitter.com/themicon_co">@themicon</a><br><span>Created:</span><span>2017-07-01</span><br><span>Updated:</span><span>2017-09-30</span></div></nav><div class="inf-content"><div class="inf-item-header"><h1>Dasha<small>Bootstrap 4 Admin Template + HTML5/jQuery</small></h1><p>Thank you for purchasing Dasha - Bootstrap 4 Admin Template + HTML5/jQuery.<br>If you have any question about this product and beyond the scope of this help file, please feel free to write us using the support button.</p><br><p><strong>Thanks so much!</strong></p></div><section class="inf-section"><article id="introduction"><h2 class="title">Introduction</h2><div class="content"><p>This document aims to explain the best way to work with the product and its components.</p>
+<p><strong>- <em>All the best and enjoy coding.</em></strong></p>
+<h4 id="getting-started-tips">Getting started tips</h4>
+<ul>
+<li>Do not start from scratch, use an existing asset and modify it to learn how it works.</li>
+<li>Explore the sources for ideas and sample code.</li>
+<li>Use Firebug or Chrome Developer Tools to find bugs on your website. Using one of those tools will help you to save time analyzing the site and finding elements structure, like classes, id or tags<ul>
+<li>Quick tip: open your site with Chrome, press F12 and go to console tab, reload your page and if something goes wrong you will see your page errors in red text.</li>
+</ul>
+</li>
+<li>In case of errors, someone might have seen it too, you can try a Google search for a quick fix.</li>
+</ul>
+<h4 id="starting-the-app">Starting the app</h4>
+<p>It&#39;s recommended to run this application using a server (Apache, IIS, xampp, etc) to serve the html files and perform necessary http request.<br>Anyway, this project doesn&#39;t need a server but some components will not work if the application is not running from a server.  </p>
+<h5 id="basic-server-setup-requires-nodejs-">Basic server setup (requires nodejs)</h5>
+<p>This is simple solution for a basic server setup using nodejs that might help you. If you don&#39;t have installed nodejs take a look at the Build section to learn about it</p>
+<ul>
+<li><p>Install the http-server  (-g installs globally)  </p>
+<p><code>npm install http-server -g</code>  </p>
+</li>
+<li><p>Move to the root folder of the theme (where index.html is located) and run</p>
+<p><code>http-server . -a 127.0.0.1 -p 8080</code></p>
+</li>
+<li><p>If everything goes fine you can now access to the app at <a href="http://127.0.0.1:8080/">http://127.0.0.1:8080/</a></p>
+</li>
+</ul>
+</div></article><article id="structure"><h2 class="title">Structure</h2><div class="content"><p>Before starting to customize the template, here is the project files organization structure:</p>
+<pre><code class="lang-css">+---dist
+|   +---css
+|   +---img
+|   +---js
+|   +---static
+|   +---vendor
++---src
+    +---app
+    |   +---components
+    |   |   +---bootstrap
+    |   |   |   +---mixins
+    |   |   +---charts
+    |   |   +---colors
+    |   |   +---common
+    |   |   +---core
+    |   |   +---dashboard
+    |   |   +---elements
+    |   |   +---error
+    |   |   +---footer
+    |   |   +---forms
+    |   |   +---header
+    |   |   +---maps
+    |   |   +---pages
+    |   |   +---settings
+    |   |   +---sidebar
+    |   |   +---tables
+    |   |   +---translate
+    |   |   +---user
+    |   |   +---utils
+    |   |   +---widgets
+    |   +---images
+    |   +---static
+    +---vendor
+    +---node_modules
+</code></pre>
+<h4 id="main-folders-explanation">Main folders explanation</h4>
+<p><strong>dist/</strong></p>
+<p>This folder contains all assets necessary to run the application (images, fonts, etc) and compiled files. This files are ready to deploy on your server. This folder is also generated using Gulp.</p>
+<ul>
+<li>css/ This folder contains the compiled stylesheets.</li>
+<li>js/ This folder contains only the final build of javascript files. </li>
+<li>vendor/ This folder contains vendor assets that are listed in the index file. Files are placed here using gulp-useref plugin. </li>
+<li>static/ This folder contains server side files used for demonstration. In a real app your server should listen to specific address and return the content of this files (and/or others) with specific information.</li>
+</ul>
+<p><strong>src/app</strong></p>
+<p>This folder contains the source files organized by components. Each component can contains PUG(JADE)/HTML, SCSS and JS files.  </p>
+<p><strong>src/node_modules</strong></p>
+<p>This folder contains dependencies for development installed using npm&quot;</p>
+<p><strong>src/vendor</strong></p>
+<p>This folder contains vendor assets installed via Bower, by reading the index file Gulp will copy only those files included in the template to copy into the dist/vendor location.</p>
+</div></article><article id="build"><h2 class="title">Build</h2><div class="content"><blockquote>
+<p><strong>Important</strong> You only need to follow this instructions if you plan to use build tools.</p>
+</blockquote>
+<h4 id="build-tools">Build Tools</h4>
+<p>Node.js is a platform built on Chrome’s JavaScript runtime for easily building fast, scalable network applications.</p>
+<p>Gulp is a task manager, you can define different tasks to run certain commands. Those commands does the compilation job for precompiled languages (PUG/SCSS), and concatenates the JS files.</p>
+<p>Bower is a dependency manager, it works by fetching and installing packages from all over, taking care of hunting, finding, downloading, and saving the stuff you’re looking for. Bower keeps track of these packages in a manifest file, bower.json.</p>
+<p>The package includes under the <strong>src/</strong> folder the file gulpfile.js, package.json and bower.json to install the required components in order to compile the source files.<br><strong>.bowerrc</strong> includes directives for bower and is used to change the destination folder where files are downloaded.<br><strong>.jshintrc</strong> contains directives used to ensure a well written Javascript code. </p>
+<h4 id="installing-tools">Installing tools</h4>
+<p>The following steps are intended to be an orientation guide, if you are not experienced with this you will need to learn a bit more about it from Google :)</p>
+<ul>
+<li>To install node and npm, go to <a href="http://nodejs.org/" title="http://nodejs.org/">http://nodejs.org/</a></li>
+<li>Download and install GIT for your platform from <a href="http://git-scm.com/downloads">http://git-scm.com/downloads</a></li>
+</ul>
+<p>Once you have all tools installed</p>
+<ul>
+<li>Open a console/terminal and <code>npm install -g gulp bower</code> to install Bower and Gulp</li>
+<li><p>Move to the package master/ folder, there run the following commands</p>
+<ul>
+<li>This command will install all node dependencies.
+<code>npm install</code>. </li>
+<li>This command will install vendor dependencies
+<code>bower install</code></li>
+</ul>
+</li>
+<li><p>Finally run <code>gulp serve</code> to start the task manager.</p>
+</li>
+</ul>
+<p>If everything goes fine, you should see messages in your terminal telling you that all the task are done ok. Gulp will watch for file changes to compile them automatically and will open the application using your favorite browser.</p>
+<h5 id="gulp-configuration">Gulp configuration</h5>
+<p>If you need to change the configuration used by Gulp, mainly paths, you can do that by editing the file <code>gulp.config.js</code>  </p>
+<p>In such file you can also change Gulp plugin options too.</p>
+<h5 id="main-gulp-tasks">Main Gulp tasks</h5>
+<p>Gulp tasks must be executed under folder <strong>src</strong></p>
+<p><code>&gt; gulp serve</code></p>
+<p>This command will run the default task and start the built-in server using <a href="http://www.browsersync.io/">BrowserSync</a></p>
+<p><code>&gt; gulp build</code></p>
+<p>Use this command to build the application for development. All compiled files will be placed under &#39;dist&#39; folder. </p>
+<p><code>&gt; gulp serve --prod</code></p>
+<p>The &#39;--prod&#39; flat indicated the task is executed for production. In this case gulp will compile and start a server with production ready files. Note that the built-in server is not recommended to be used for production environments. </p>
+<p><code>&gt; gulp build --prod</code></p>
+<p>Use this command to build the application for production. All compiled files will be placed under &#39;dist&#39; folder. </p>
+<p><code>&gt; gulp --usesourcemaps</code></p>
+<p>This modifier will create source-maps when compiling assets</p>
+<p><code>&gt; gulp clean</code></p>
+<p>Delete build files</p>
+<blockquote>
+<p><strong>Be careful</strong> the clean task will delete compiled files under &#39;dist&#39; folder without any confirmation or undo option.</p>
+</blockquote>
+<p><code>&gt; gulp lint</code></p>
+<p><a href="http://www.javascriptlint.com/">Lint</a> your JavaScript code</p>
+</div></article><article id="usage"><h2 class="title">Usage</h2><div class="content"><p>This template was developed to use Gulp as a start of the development workflow.<br>Gulp provides plugins to serve the app, perform automatic browser reloading after any change and build of assets for distribution. It also allows to work with agile languages like PUG/SCSS/etc and modular JavaScript (concatenated).   </p>
+<p>Beyond that, if you are not convinced about build tools, the current setup has a basic support to work with static files (html, css) without needing build tools.  </p>
+<p><strong>We encourage you to use build tools, the benefits greatly outweigh the costs of learning.</strong></p>
+<h4 id="static-files-organization-no-gulp-">Static files organization (no gulp)</h4>
+<p>The most simple usage is by pointing the server root the &#39;dist&#39; folder of the package. Note that the the index.html  included in the root of the project is just a redirect to dashboard.html. </p>
+<p>This allows to work directly with raw files like CSS, HTML and JS without worrying about build tools.<br>Now, to edit files focus on the following locations:  </p>
+<ul>
+<li>Styles are accessible in folder /dist/css</li>
+<li>Markup is accessible in folder /dist (raw html)</li>
+<li>Scripts are accessible in folder /dist/js</li>
+</ul>
+<blockquote>
+<p><strong>Important</strong> if you change something on this folder and then use Gulp, all previous changes may be lost because Gulp uses this folder as destination to place compiled files.</p>
+</blockquote>
+<h4 id="compiled-files-organization">Compiled files organization</h4>
+<p>As quick reference, the current setup does the following compilations:</p>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th style="text-align:center">Produces</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTML</td>
+<td style="text-align:center">HTML</td>
+</tr>
+<tr>
+<td>PUG</td>
+<td style="text-align:center">HTML</td>
+</tr>
+<tr>
+<td>SCSS</td>
+<td style="text-align:center">CSS</td>
+</tr>
+<tr>
+<td>Javascript</td>
+<td style="text-align:center">Javascript (concatenation)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>HTML files found in components folder are copied directly to the &#39;dist&#39; folder</p>
+</blockquote>
+<h5 id="styles">Styles</h5>
+<p>Each component contains its own styles. Gulp read all folder recursively and includes all files related to styles into one single file: <strong>app.css</strong></p>
+<p>The inclusion order is determined by the way file are read like follows:</p>
+<pre><code class="lang-jade">path_to_components + &#39;app.scss&#39;,
+path_to_components + &#39;**/*.scss&#39;
+</code></pre>
+<p>As you can see, the file <code>app.scss</code> is read first. Use this file to add any styles that you need before anything else. For example, @import directives.</p>
+<h5 id="scripts">Scripts</h5>
+<p>Each component contains its own scripts. Gulp read all folder recursively and concats its content into one single file app.js</p>
+<p>The inclusion order is determined by the way files are read like follows:</p>
+<pre><code class="lang-jade">path_to_components + &#39;app.js&#39;
+path_to_components + &#39;**/*.js&#39;
+</code></pre>
+<p>The main file <code>app.js</code> is used as the start point of the application. Anyway, you will see that such file only has a wrapper function, that&#39;s because each module should be responsible to start a functionality by itself.</p>
+<p>Content of the app.js</p>
+<pre><code class="lang-javascript">// APP START
+// -----------------------------------
+
+(function() {
+    &#39;use strict&#39;;
+
+    // Disable warning &quot;Synchronous XMLHttpRequest on the main thread is deprecated..&quot;
+    $.ajaxPrefilter(function(options) {
+        options.async = true;
+    });
+
+})();
+</code></pre>
+<h5 id="views">Views</h5>
+<p>By default views are written in <a href="https://pugjs.org">PUG</a> (a.k.a JADE) for quick development. Using this language you will get a well organized and readable markup without need to deal with closing tags and tag delimiters.</p>
+<p>Gulp workflow also supports <strong>raw HTML</strong>, all this files are copied directly without any special process. Only PUG files are compiled separately as HTML file.<br>Meaning,<br>file.pug <em>compiles to</em> file.html<br>file.html <em>is copied as</em> file.html</p>
+<h4 id="index-and-layout">Index and Layout</h4>
+<p>One of the main benefits of using PUG is that we can use partials templates to write common parts of a page only once and reuse such template many times. This happens also for layout, similar to templates but allows to define &#39;blocks&#39; where we will add later markup for a specific page.</p>
+<p>Said that, the main application layout files is <code>core.layout.pug</code>  </p>
+<p>All application pages <em>extends</em> the main layout. The main layout includes all styles and scripts and defines the main structure of an HTML document. </p>
+<p>A page that uses this layout will have at least the following content:</p>
+<pre><code class="lang-jade">extends ../core/core.layout
+block pagetitle
+    - pageTitle = &#39;Page title&#39;
+block content
+    .container-fluid
+        // specific page content
+</code></pre>
+<p>As you can see, first we extend the layout and thus we have access to redefine blocks declared in such layout.<br>The &#39;pagetitle&#39; block is used to display the title of the page in the header area. The &#39;content&#39; block is used to set the specific content for a page.</p>
+<blockquote>
+<p>Different from layouts, a PUG template is <em>included</em> in a page. In other words, a page can extend a layout and include a template. Layouts can include templates too.</p>
+<p>As a convention we use the patterns <code>*.layout.pug</code> for Layouts, and <code>*.tpl.pug</code>for templates. </p>
+</blockquote>
+<p>Here is an example of the main layout content (note the included templates):</p>
+<pre><code class="lang-jade">doctype html
+html(lang=&#39;en&#39;)
+
+    head
+        meta(charset=&#39;utf-8&#39;)
+        meta(name=&#39;viewport&#39;, content=&#39;width=device-width, initial-scale=1, maximum-scale=1&#39;)
+
+        meta(name=&#39;description&#39;, content=&#39;Bootstrap Admin Template&#39;)
+        meta(name=&#39;keywords&#39;, content=&#39;app, responsive, jquery, bootstrap, dashboard, admin&#39;)
+
+        title Dasha - Bootstrap Admin Template
+
+        // Vendor styles
+        // build:css(./) css/vendor.css
+        // Animate.CSS
+        link(rel=&#39;stylesheet&#39;, href=&#39;vendor/animate.css/animate.css&#39;)
+        // Bootstrap
+        link(rel=&#39;stylesheet&#39;, href=&#39;vendor/bootstrap/dist/css/bootstrap.min.css&#39;)
+        // Ionicons
+        link(rel=&#39;stylesheet&#39;, href=&#39;vendor/ionicons/css/ionicons.css&#39;)
+        // Material Colors
+        link(rel=&#39;stylesheet&#39;, href=&#39;vendor/material-colors/dist/colors.css&#39;)
+
+        block vendor_css
+
+        // endbuild
+
+        // Application styles
+        link(rel=&#39;stylesheet&#39;, href=&#39;css/app.css&#39;)
+
+    body.theme-default
+
+        .layout-container
+            // top navbar
+            header.header-container
+                include ../header/header.tpl.pug
+
+            // sidebar
+            aside.sidebar-container
+                include ../sidebar/sidebar.tpl.pug
+            .sidebar-layout-obfuscator
+
+            // Main section
+            main.main-container
+
+                // Page content
+                section.section-container
+                    block content
+                // Page footer
+                footer.footer-container
+                    include ../footer/footer.tpl.pug
+
+        block bodychild
+
+        // Search template
+        include ../header/header-search.tpl.pug
+        // End Search template
+        // Settings template
+        include ../settings/settings.tpl.pug
+        // End Settings template
+
+
+        // build:js
+        // Modernizr
+        script(src=&#39;vendor/modernizr/modernizr.custom.js&#39;)
+        // PaceJS
+        script(src=&#39;vendor/pace/pace.min.js&#39;)
+        // jQuery
+        script(src=&#39;vendor/jquery/dist/jquery.js&#39;)
+        // Bootstrap
+        script(src=&#39;vendor/tether/dist/js/tether.min.js&#39;)
+        script(src=&#39;vendor/bootstrap/dist/js/bootstrap.js&#39;)
+        // Material Colors
+        script(src=&#39;vendor/material-colors/dist/colors.js&#39;)
+        // Screenfull
+        script(src=&#39;vendor/screenfull/dist/screenfull.js&#39;)
+        // jQuery Localize
+        script(src=&#39;vendor/jquery-localize-i18n/dist/jquery.localize.js&#39;)
+
+        block vendor_js
+
+        // endbuild
+
+        // App script
+        script(src=&#39;js/app.js&#39;)
+</code></pre>
+<p>We use gulp-useref to detect files used in the project from Bower, and copy them to the dist/vendor location. This way you can deploy only necessary files and avoid any extra assets downloaded from Bower. </p>
+<blockquote>
+<p><strong>Important</strong> Other files like images, fonts, etc can be configured to be included in the copy by editing the file <strong>gulp.config.js</strong></p>
+</blockquote>
+<h5 id="behavior-classes">Behavior classes</h5>
+<p>As you can see in the index, there are some classes related to the sidebar that are used to change the layout behavior.<br>This classes are:</p>
+<table>
+<thead>
+<tr>
+<th>Classname</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sidebar-visible</code></td>
+<td style="text-align:center">Makes the sidebar visible on mobiles and is activated only via Javascript.</td>
+</tr>
+<tr>
+<td><code>sidebar-cover</code></td>
+<td style="text-align:center">Enables the sidebar cover mode (offcanvas) for desktops.</td>
+</tr>
+<tr>
+<td><code>footer-fixed</code></td>
+<td style="text-align:center">Makes the footer always visible.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="sidebar">Sidebar</h5>
+<p>Sidebar related styles, markup and scripts are contained under the components/sidebar folder.</p>
+<p>The file <code>sidebar.tpl.pug</code> contains the markup to generate the sidebar and each menu entry.</p>
+<p>The sidebar uses an element (<code>.sidebar-layout-obfuscator</code>) to show a backdrop screen when it&#39;s open on mobiles. This backdrop also allows the user to click on almost any place to close the sidebar easily.</p>
+<h5 id="header">Header</h5>
+<p>Header related styles, markup and scripts are contained under the components/header folder.</p>
+<p>The file <code>header.tpl.pug</code> contains the markup to generate the top navigation bar.</p>
+<p>Under this module also exists the search bar scripts. The markup for the search bar can be found in file <code>header-search.tpl.pug</code></p>
+<p>In the file <code>header.js</code> you can find functions to show the search bar and the right sidebar. Both components are based on Bootstrap modals with minor modifications to the styles. Custom modals styles can be found in file <code>common/modals.scss</code></p>
+<h5 id="user-layouts">User layouts</h5>
+<p>User layout is used for common user pages like login, signup, lock, etc.</p>
+<p>All related stuff for this layout and page content can be found under folder <strong>components/user</strong></p>
+<p>The content of the user layout:</p>
+<pre><code class="lang-jade">doctype html
+html(lang=&quot;en&quot;)
+
+    head
+        meta(charset=&#39;utf-8&#39;)
+        meta(name=&#39;viewport&#39;, content=&#39;width=device-width, initial-scale=1, maximum-scale=1&#39;)
+
+        meta(name=&#39;description&#39;, content=&#39;Bootstrap Admin Template&#39;)
+        meta(name=&#39;keywords&#39;, content=&#39;app, responsive, jquery, bootstrap, dashboard, admin&#39;)
+
+        title Dasha - Bootstrap Admin Template
+
+        // build:css
+        // Animate.CSS
+        link(rel=&#39;stylesheet&#39;, href=&#39;vendor/animate.css/animate.css&#39;)
+        // Bootstrap
+        link(rel=&#39;stylesheet&#39;, href=&#39;vendor/bootstrap/dist/css/bootstrap.min.css&#39;)
+        // Ionicons
+        link(rel=&#39;stylesheet&#39;, href=&#39;vendor/ionicons/css/ionicons.css&#39;)
+        // Material Colors
+        link(rel=&#39;stylesheet&#39;, href=&#39;vendor/material-colors/dist/colors.css&#39;)
+        // endbuild
+
+        // Application styles
+        link(rel=&#39;stylesheet&#39;, href=&#39;css/app.css&#39;)
+    body
+
+        .layout-container
+            .page-container.bg-blue-grey-900
+                block content
+
+        // build:js
+        // Modernizr
+        script(src=&quot;vendor/modernizr/modernizr.custom.js&quot;)
+        // jQuery
+        script(src=&quot;vendor/jquery/dist/jquery.js&quot;)
+        // Bootstrap
+        script(src=&quot;vendor/tether/dist/js/tether.min.js&quot;)
+        script(src=&quot;vendor/bootstrap/dist/js/bootstrap.js&quot;)
+        // Material Colors
+        script(src=&quot;vendor/material-colors/dist/colors.js&quot;)
+        // jQuery Form Validation
+        script(src=&quot;vendor/jquery-validation/dist/jquery.validate.js&quot;)
+        script(src=&quot;vendor/jquery-validation/dist/additional-methods.js&quot;)
+        // endbuild
+
+        // App script
+        script(src=&quot;js/app.js&quot;)
+</code></pre>
+<h5 id="rtl-stylesheet">RTL Stylesheet</h5>
+<p>Right to left feature is based on rtlcss tool, specifically the Gulp plugin version, <a href="https://github.com/jjlharrison/gulp-rtlcss">gulp-rtlcss</a><br>RTL version of stylesheet are always generated (via GUlp) and not included in the template by default.<br>To enable RTL, is necessary to include the RTL variant stylesheets of the application and Bootstrap, you can do that in the following file <code>components/core/core.layout.pug</code>  </p>
+<pre><code class="lang-jade">// Change link for Bootstrap
+link(rel=&#39;stylesheet&#39;, href=&#39;vendor/bootstrap/dist/css/bootstrap-rtl.css&#39;)
+// Change link for application
+link(rel=&#39;stylesheet&#39;, href=&#39;css/app-rtl.css&#39;)
+</code></pre>
+<p>Note that the RTL version of Bootstrap is generated in the same vendor folder. This is done this way so the task that that build the vendor assets can use the file as if it was installed from Bower. </p>
+<blockquote>
+<p><strong>Important</strong> More customization might be necessary depending on plugins used. The RTL version changes the global styles and components of the template.</p>
+</blockquote>
+</div></article><article id="components"><h2 class="title">Components</h2><div class="content"><p>This table shows a brief description of each component</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bootstrap</td>
+<td style="text-align:center">Bootstrap reset</td>
+</tr>
+<tr>
+<td>charts</td>
+<td style="text-align:center">Charts menu entry (flot, rickshaw, radials etc)</td>
+</tr>
+<tr>
+<td>colors</td>
+<td style="text-align:center">Color constants and utilities</td>
+</tr>
+<tr>
+<td>common</td>
+<td style="text-align:center">Common used styles and mixins</td>
+</tr>
+<tr>
+<td>core</td>
+<td style="text-align:center">Core component of the application</td>
+</tr>
+<tr>
+<td>dashboard</td>
+<td style="text-align:center">Dashboard related styles, script and views</td>
+</tr>
+<tr>
+<td>widgets</td>
+<td style="text-align:center">Widgets menu entry</td>
+</tr>
+<tr>
+<td>elements</td>
+<td style="text-align:center">Elements menu entry</td>
+</tr>
+<tr>
+<td>forms</td>
+<td style="text-align:center">Forms menu entry</td>
+</tr>
+<tr>
+<td>header</td>
+<td style="text-align:center">Header template and related stuff</td>
+</tr>
+<tr>
+<td>footer</td>
+<td style="text-align:center">Footer template and related stuff</td>
+</tr>
+<tr>
+<td>maps</td>
+<td style="text-align:center">Maps menu entry</td>
+</tr>
+<tr>
+<td>pages</td>
+<td style="text-align:center">Pages menu entry</td>
+</tr>
+<tr>
+<td>settings</td>
+<td style="text-align:center">Settings and themes related stuff</td>
+</tr>
+<tr>
+<td>sidebar</td>
+<td style="text-align:center">Sidebar directive and template</td>
+</tr>
+<tr>
+<td>tables</td>
+<td style="text-align:center">Tables menu entry</td>
+</tr>
+<tr>
+<td>translate</td>
+<td style="text-align:center">Translation related stuff</td>
+</tr>
+<tr>
+<td>user</td>
+<td style="text-align:center">User pages (login, signup, etc)</td>
+</tr>
+<tr>
+<td>error</td>
+<td style="text-align:center">Erro pages (404, 403, etc)</td>
+</tr>
+<tr>
+<td>utils</td>
+<td style="text-align:center">Utilities</td>
+</tr>
+</tbody>
+</table>
+<h4 id="translation">Translation</h4>
+<p>The translation system uses jQuery Localize
+This modules simplifies the translation system by loading translate references from a JSON file and replacing the content where the reference has been used.</p>
+<p>Examples</p>
+<pre><code class="lang-markup">&lt;small data-localize=&quot;dashboard.WELCOME&quot;&gt;&lt;/small&gt;
+</code></pre>
+<p>The JSON files with translation references are located in the folder static/i18n</p>
+<p>Example content of the file app/i18n/en.json</p>
+<pre><code class="lang-javascript">{
+    &quot;translate&quot;: {
+        &quot;EXAMPLE&quot;: &quot;This is an example text using English as selected language.&quot;
+    }
+}
+</code></pre>
+<p>As a convention, we use the key name with the translated text in uppercase.</p>
+<h4 id="settings-and-themes">Settings and Themes</h4>
+<p>All settings related files belongs to <strong>components/settings</strong></p>
+<p>There you will find the initial values for the different settings supported.
+The template markup for the settings panel (the right sidebar) and the styles for such panel. </p>
+<h5 id="themes">Themes</h5>
+<p>Theming is based on class-names that provides colors to components. </p>
+<p>All themes classes available are configured in <strong>components/common/themes.scss</strong></p>
+<p>Each of this theme, named theme-* is applied to the body tag via JavaScript.</p>
+<p>Themes also uses mixins so you can easily edit or add new themes.<br>Example:</p>
+<pre><code class="lang-css">.theme-4 {
+    @include theme-sidebar($mdc-blue-grey-900, #fff);
+    @include theme-brand($mdc-blue-grey-900, #fff);
+    @include theme-header($mdc-blue-700, #fff);
+    @include theme-content($body-bg);
+    @include theme-sidebar-items($mdc-blue-700);
+}
+</code></pre>
+<p>Note that many variables for colors are defined in file <strong>components/common/material-colors.scss</strong></p>
+<h5 id="default-theme">Default theme</h5>
+<p>To set a theme as default, just add the classname of the theme you want to the body tag.</p>
+<p>Is a good practice adding the classname directly to the body so the styles are interpreted by the browser as soon as the page loads.  </p>
+</div></article><article id="customization"><h2 class="title">Customization</h2><div class="content"><p>Here you will find information about how to add new features to the template.</p>
+<h4 id="adding-new-components">Adding new Components</h4>
+<p>To add a new component create a new folder under <strong>&#39;src/app/components/&#39;</strong></p>
+<p>For example,&#39;components/<strong>mycomp</strong>&#39; </p>
+<h5 id="adding-styles">Adding styles</h5>
+<p>To add a new styles just a create a new SCSS file into the component folder. This file will be automatically compiled and added into the final CSS file.</p>
+<blockquote>
+<p>Separated components should not have conflicts between CSS rules but just in case, check the specificity in your styles (read more <a href="http://www.smashingmagazine.com/2007/07/css-specificity-things-you-should-know/">here</a>)</p>
+</blockquote>
+<h5 id="adding-views">Adding views</h5>
+<p>Create a new PUG (or HTML) file. </p>
+<p>For example, mycomp.pug will be compiled to mycomp.html</p>
+<p>The minimum necessary for a view markup is the .container-* element</p>
+<p>mycomp.pug</p>
+<pre><code class="lang-jade">extends ../core/core.layout.pug
+block pagetitle
+    - pageTitle = &#39;Page Title&#39;
+block content
+    .container-fluid
+        // here goes the content, .row, .panels., .cards, etc...
+</code></pre>
+<p>or, with a centered container </p>
+<pre><code class="lang-jade">extends ../core/core.layout.pug
+block pagetitle
+    - pageTitle = &#39;Page Title&#39;
+block content
+    .container.container-lg
+        // here goes the content, .row, .panels., .cards, etc...
+</code></pre>
+<h5 id="adding-a-script">Adding a Script</h5>
+<p>Your new component should define its own scripts in order to keep the app modular.
+Place in the new folder a script file with the name <code>mycomp.js</code> and add the following example content:</p>
+<pre><code class="lang-javascript">(function() {
+    &#39;use strict&#39;;
+
+    // Run when dom is ready
+    $(initMyComp);
+
+    //////
+
+    function initMyComp() {
+        // component stuff here
+    }
+
+})();
+</code></pre>
+<p>The function that wraps the entire code is known as <a href="https://en.wikipedia.org/wiki/Immediately-invoked_function_expression">IIFE</a></p>
+<h5 id="adding-a-menu-entry">Adding a Menu entry</h5>
+<p>To add a new menu, edit the file <code>sidebar\sidebar.tpl.pug</code> and the a new list item in the menu under element <code>nav.sidebar-nav</code>   </p>
+<p>Example of the Dashboard menu</p>
+<pre><code class="lang-jade">li
+    a(href=&#39;dashboard.html&#39;)
+        span.float-right.nav-label
+            span.badge-rounded.badge-primary 5
+        span.nav-icon
+            em.ion-ios-speedometer-outline
+        span Dashboard
+</code></pre>
+<p>The first <code>span.nav-label</code> corresponds the float-right alert badge.<br>The second <code>span.nav-icon</code> is used for to place the menu icon.<br>The last <code>span</code> is used for the menu text (see Translation to translate this text).  </p>
+<h4 id="adding-vendor-assets">Adding vendor assets</h4>
+<p>To add a new vendor assets you need to follow this steps</p>
+<p><strong>1-</strong> Download and install. </p>
+<p>Usually this is done with &#39;bower install 3rd-party-plugin&#39;. </p>
+<p>All files downloaded will be placed in src/vendor/ folder</p>
+<p><strong>2-</strong> Add main files to the application. </p>
+<p>Open the file where you plan to use the new plugin installed and add the styles/script:</p>
+<pre><code class="lang-jade">head
+    link(rel=&quot;stylesheet&quot; href=&quot;vendor/name/some-styles.css&quot;)
+body
+    ......
+    script(src=&quot;vendor/name/some-scripts.js&quot;)
+
+    # application scripts
+</code></pre>
+<p>Note that we add styles in the &#39;head&#39; section of the page, and scripts should placed at bottom of the &#39;body&#39; but before the application scripts. This is a suggestion, you can change it as per your needs.</p>
+<h4 id="adding-vendor-assets-per-page">Adding vendor assets per page</h4>
+<p>To add vendor assets only on those pages that uses it, you can use the blocks &#39;vendor_css&#39; and &#39;vendor_js&#39; for styles and scripts respectively.<br>Take a look at the main application layout to see where are placed the mentioned blocks.</p>
+</div></article><article id="credits"><h2 class="title">Credits</h2><div class="content"><table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:center">URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bootstrap-filestyle</td>
+<td style="text-align:center"><a href="https://github.com/markusslima/bootstrap-filestyle">https://github.com/markusslima/bootstrap-filestyle</a></td>
+</tr>
+<tr>
+<td>animate.css</td>
+<td style="text-align:center"><a href="https://github.com/daneden/animate.css">https://github.com/daneden/animate.css</a></td>
+</tr>
+<tr>
+<td>flot-spline</td>
+<td style="text-align:center"><a href="https://github.com/JohnPozy/flot-spline">https://github.com/JohnPozy/flot-spline</a></td>
+</tr>
+<tr>
+<td>flot.tooltip</td>
+<td style="text-align:center"><a href="https://github.com/krzysu/flot.tooltip">https://github.com/krzysu/flot.tooltip</a></td>
+</tr>
+<tr>
+<td>flot</td>
+<td style="text-align:center"><a href="https://github.com/flot/flot">https://github.com/flot/flot</a></td>
+</tr>
+<tr>
+<td>font-awesome</td>
+<td style="text-align:center"><a href="http://fontawesome.io">http://fontawesome.io</a></td>
+</tr>
+<tr>
+<td>ionicons</td>
+<td style="text-align:center"><a href="https://github.com/driftyco/ionicons">https://github.com/driftyco/ionicons</a></td>
+</tr>
+<tr>
+<td>jquery.browser</td>
+<td style="text-align:center"><a href="https://github.com/gabceb/jquery-browser-plugin">https://github.com/gabceb/jquery-browser-plugin</a></td>
+</tr>
+<tr>
+<td>jquery.easy-pie-chart</td>
+<td style="text-align:center"><a href="https://github.com/rendro/easy-pie-chart">https://github.com/rendro/easy-pie-chart</a></td>
+</tr>
+<tr>
+<td>material-colors</td>
+<td style="text-align:center"><a href="https://github.com/shuhei/material-colors">https://github.com/shuhei/material-colors</a></td>
+</tr>
+<tr>
+<td>screenfull</td>
+<td style="text-align:center"><a href="https://github.com/sindresorhus/screenfull.js">https://github.com/sindresorhus/screenfull.js</a></td>
+</tr>
+<tr>
+<td>lodash</td>
+<td style="text-align:center"><a href="https://github.com/lodash/lodash">https://github.com/lodash/lodash</a></td>
+</tr>
+<tr>
+<td>modernizr</td>
+<td style="text-align:center"><a href="https://github.com/Modernizr/Modernizr">https://github.com/Modernizr/Modernizr</a></td>
+</tr>
+<tr>
+<td>sparkline</td>
+<td style="text-align:center"><a href="https://github.com/gwatts/jquery.sparkline">https://github.com/gwatts/jquery.sparkline</a></td>
+</tr>
+<tr>
+<td>bootstrap</td>
+<td style="text-align:center"><a href="http://getbootstrap.com">http://getbootstrap.com</a></td>
+</tr>
+<tr>
+<td>nestable</td>
+<td style="text-align:center"><a href="https://github.com/dbushell/Nestable">https://github.com/dbushell/Nestable</a></td>
+</tr>
+<tr>
+<td>dropzone</td>
+<td style="text-align:center"><a href="http://www.dropzonejs.com">http://www.dropzonejs.com</a></td>
+</tr>
+<tr>
+<td>jquery.bootgrid</td>
+<td style="text-align:center"><a href="http://www.jquery-bootgrid.com">http://www.jquery-bootgrid.com</a></td>
+</tr>
+<tr>
+<td>d3</td>
+<td style="text-align:center"><a href="https://github.com/mbostock/d3">https://github.com/mbostock/d3</a></td>
+</tr>
+<tr>
+<td>select2</td>
+<td style="text-align:center"><a href="https://github.com/ivaynberg/select2">https://github.com/ivaynberg/select2</a></td>
+</tr>
+<tr>
+<td>x-editable</td>
+<td style="text-align:center"><a href="https://github.com/vitalets/x-editable">https://github.com/vitalets/x-editable</a></td>
+</tr>
+<tr>
+<td>ika.jvectormap</td>
+<td style="text-align:center"><a href="http://jvectormap.com/">http://jvectormap.com/</a></td>
+</tr>
+<tr>
+<td>select2-bootstrap-css</td>
+<td style="text-align:center"><a href="https://github.com/t0m/select2-bootstrap-css">https://github.com/t0m/select2-bootstrap-css</a></td>
+</tr>
+<tr>
+<td>jquery</td>
+<td style="text-align:center"><a href="https://github.com/jquery/jquery">https://github.com/jquery/jquery</a></td>
+</tr>
+<tr>
+<td>rickshaw</td>
+<td style="text-align:center"><a href="https://github.com/shutterstock/rickshaw">https://github.com/shutterstock/rickshaw</a></td>
+</tr>
+<tr>
+<td>jquery-validation</td>
+<td style="text-align:center"><a href="http://jqueryvalidation.org/">http://jqueryvalidation.org/</a></td>
+</tr>
+<tr>
+<td>jquery-knob</td>
+<td style="text-align:center"><a href="https://github.com/aterrien/jQuery-Knob">https://github.com/aterrien/jQuery-Knob</a></td>
+</tr>
+<tr>
+<td>clockpicker</td>
+<td style="text-align:center"><a href="http://weareoutman.github.io/clockpicker/">http://weareoutman.github.io/clockpicker/</a></td>
+</tr>
+<tr>
+<td>nouislider</td>
+<td style="text-align:center"><a href="http://refreshless.com/nouislider/">http://refreshless.com/nouislider/</a></td>
+</tr>
+<tr>
+<td>loaders.css</td>
+<td style="text-align:center"><a href="https://github.com/ConnorAtherton/loaders.css">https://github.com/ConnorAtherton/loaders.css</a></td>
+</tr>
+<tr>
+<td>summernote</td>
+<td style="text-align:center"><a href="http://summernote.org">http://summernote.org</a></td>
+</tr>
+<tr>
+<td>mjolnic-bootstrap-colorpicker</td>
+<td style="text-align:center"><a href="https://github.com/mjolnic/bootstrap-colorpicker">https://github.com/mjolnic/bootstrap-colorpicker</a></td>
+</tr>
+<tr>
+<td>moment</td>
+<td style="text-align:center"><a href="https://github.com/moment/moment">https://github.com/moment/moment</a></td>
+</tr>
+<tr>
+<td>gmaps</td>
+<td style="text-align:center"><a href="https://github.com/HPNeo/gmaps">https://github.com/HPNeo/gmaps</a></td>
+</tr>
+<tr>
+<td>datatables</td>
+<td style="text-align:center"><a href="https://github.com/DataTables/DataTables">https://github.com/DataTables/DataTables</a></td>
+</tr>
+<tr>
+<td>jquery-localize-i18n</td>
+<td style="text-align:center"><a href="https://github.com/coderifous/jquery-localize">https://github.com/coderifous/jquery-localize</a></td>
+</tr>
+<tr>
+<td>bootstrap-datepicker</td>
+<td style="text-align:center"><a href="https://github.com/eternicode/bootstrap-datepicker">https://github.com/eternicode/bootstrap-datepicker</a></td>
+</tr>
+<tr>
+<td>sweetalert</td>
+<td style="text-align:center"><a href="http://tristanedwards.me/sweetalert">http://tristanedwards.me/sweetalert</a></td>
+</tr>
+<tr>
+<td>peity</td>
+<td style="text-align:center"><a href="http://benpickles.github.io/peity/">http://benpickles.github.io/peity/</a></td>
+</tr>
+</tbody>
+</table>
+</div></article></section></div></div><script src="assets/scripts.js"></script></body></html>

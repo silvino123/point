@@ -1,0 +1,195 @@
+extends ../core/core.layout.pug
+block pagetitle
+    - pageTitle = 'Kanban'
+block content
+    .container.container-lg
+        .d-flex
+            .mr-auto.mb-3.mt-2
+                button.btn.btn-info.btm-sm(type="button")
+                    em.ion-plus.mr-2
+                    | Add Task
+            .ml-auto.wd-md.text-right.mt-2
+                small.text-muted.lh1 * Kanban view powered by Dragula
+
+        form.mb-3
+            .form-row.align-items-center
+                .col-8
+                    input.form-control(type='text', placeholder='Filter tasks...')
+                .col-4
+                    select.custom-select.fw
+                        option(value='') Select state
+                        option(value='') Pending
+                        option(value='') In Progress
+                        option(value='') Done
+        .row
+            .col-lg-4
+                .cardbox
+                    .cardbox-heading
+                        .total.float-right $ 1.000
+                        h3.cardbox-title Pending
+                    .cardbox-body
+                        #pending(style="min-height:50px;")
+                            .cardbox
+                                .pb-1.bg-gradient-primary.top-line
+                                .cardbox-body
+                                    .d-flex.flex-wrap
+                                        .mr-4
+                                            img.shadow-z5.thumb48.rounded(src="img/user/01.jpg", alt="user")
+                                        div
+                                            p.my-1: strong Sia Rhodes
+                                            small Address, 123 Route
+                                        .ml-auto.mr-0.mt-0.mr-lg-auto.ml-lg-0.mt-lg-4.ml-xl-auto.mr-xl-0.mt-xl-0
+                                            span.budget.p-2.badge.badge-primary $ 1555
+                                .cardbox-footer
+                                    // START dropdown
+                                    .float-right.dropdown
+                                        button.btn.btn-flat.btn-flat-icon(type='button', data-toggle="dropdown")
+                                            em.ion-android-more-horizontal
+                                        .dropdown-menu.dropdown-scale.dropdown-menu-right(role='menu')
+                                            a.dropdown-item(href="#") Add meeting
+                                            a.dropdown-item(href="#") Edit
+                                            a.dropdown-item(href="#") Remove
+                                    // END dropdown
+                                    p.mb-0
+                                        small
+                                            em.ion-record.text-danger.mr-2
+                                        small.text-muted
+                                            strong.mr-2 1 Task overdue
+
+                            .cardbox
+                                .pb-1.bg-gradient-primary.top-line
+                                .cardbox-body
+                                    .d-flex.flex-wrap
+                                        .mr-4
+                                            img.shadow-z5.thumb48.rounded(src="img/user/02.jpg", alt="user")
+                                        div
+                                            p.my-1: strong Kenzi Barnett
+                                            small Address, 123 Route
+                                        .ml-auto.mr-0.mt-0.mr-lg-auto.ml-lg-0.mt-lg-4.ml-xl-auto.mr-xl-0.mt-xl-0
+                                            span.budget.p-2.badge.badge-primary $ 1555
+                                .cardbox-footer
+                                    // START dropdown
+                                    .float-right.dropdown
+                                        button.btn.btn-flat.btn-flat-icon(type='button', data-toggle="dropdown")
+                                            em.ion-android-more-horizontal
+                                        .dropdown-menu.dropdown-scale.dropdown-menu-right(role='menu')
+                                            a.dropdown-item(href="#") Add meeting
+                                            a.dropdown-item(href="#") Edit
+                                            a.dropdown-item(href="#") Remove
+                                    // END dropdown
+                                    p.mb-0
+                                        small
+                                            em.ion-record.text-danger.mr-2
+                                        small.text-muted
+                                            strong.mr-2 Added:
+                                            span Fri Oct 24 2017
+                            .cardbox
+                                .pb-1.bg-gradient-primary.top-line
+                                .cardbox-body
+                                    .d-flex.flex-wrap
+                                        .mr-4
+                                            img.shadow-z5.thumb48.rounded(src="img/user/03.jpg", alt="user")
+                                        div
+                                            p.my-1: strong Sam Hughes
+                                            small Address, 123 Route
+                                        .ml-auto.mr-0.mt-0.mr-lg-auto.ml-lg-0.mt-lg-4.ml-xl-auto.mr-xl-0.mt-xl-0
+                                            span.budget.p-2.badge.badge-primary $ 1555
+                                .cardbox-footer
+                                    // START dropdown
+                                    .float-right.dropdown
+                                        button.btn.btn-flat.btn-flat-icon(type='button', data-toggle="dropdown")
+                                            em.ion-android-more-horizontal
+                                        .dropdown-menu.dropdown-scale.dropdown-menu-right(role='menu')
+                                            a.dropdown-item(href="#") Add meeting
+                                            a.dropdown-item(href="#") Edit
+                                            a.dropdown-item(href="#") Remove
+                                    // END dropdown
+                                    p.mb-0
+                                        small
+                                            em.ion-record.text-info.mr-2
+                                        small.text-muted
+                                            strong.mr-2 Review schedule
+            .col-lg-4
+                .cardbox
+                    .cardbox-heading
+                        .total.float-right $ 1.000
+                        h3.cardbox-title In Progress
+                    .cardbox-body
+                        #in-progress(style="min-height:50px;")
+                            .cardbox
+                                .pb-1.bg-gradient-info.top-line
+                                .cardbox-body
+                                    .d-flex.flex-wrap
+                                        .mr-4
+                                            img.shadow-z5.thumb48.rounded(src="img/user/05.jpg", alt="user")
+                                        div
+                                            p.my-1: strong Erika Carroll
+                                            small Address, 123 Route
+                                        .ml-auto.mr-0.mt-0.mr-lg-auto.ml-lg-0.mt-lg-4.ml-xl-auto.mr-xl-0.mt-xl-0
+                                            span.budget.p-2.badge.badge-info $ 1555
+                                .cardbox-footer
+                                    // START dropdown
+                                    .float-right.dropdown
+                                        button.btn.btn-flat.btn-flat-icon(type='button', data-toggle="dropdown")
+                                            em.ion-android-more-horizontal
+                                        .dropdown-menu.dropdown-scale.dropdown-menu-right(role='menu')
+                                            a.dropdown-item(href="#") Add meeting
+                                            a.dropdown-item(href="#") Edit
+                                            a.dropdown-item(href="#") Remove
+                                    // END dropdown
+                                    p.mb-0
+                                        small
+                                            em.ion-record.text-danger.mr-2
+                                        small.text-muted
+                                            strong.mr-2 Pending contact
+            .col-lg-4
+                .cardbox
+                    .cardbox-heading
+                        .total.float-right $ 1.000
+                        h3.cardbox-title Done
+                    .cardbox-body
+                        #done(style="min-height:50px;")
+                            .cardbox
+                                .pb-1.bg-gradient-success.top-line
+                                .cardbox-body
+                                    .d-flex.flex-wrap
+                                        .mr-4
+                                            img.shadow-z5.thumb48.rounded(src="img/user/02.jpg", alt="user")
+                                        div
+                                            p.my-1: strong Curtis Vasquez
+                                            small Address, 123 Route
+                                        .ml-auto.mr-0.mt-0.mr-lg-auto.ml-lg-0.mt-lg-4.ml-xl-auto.mr-xl-0.mt-xl-0
+                                            span.budget.p-2.badge.badge-success $ 1555
+                                .cardbox-footer
+                                    // START dropdown
+                                    .float-right.dropdown
+                                        button.btn.btn-flat.btn-flat-icon(type='button', data-toggle="dropdown")
+                                            em.ion-android-more-horizontal
+                                        .dropdown-menu.dropdown-scale.dropdown-menu-right(role='menu')
+                                            a.dropdown-item(href="#") Add meeting
+                                            a.dropdown-item(href="#") Edit
+                                            a.dropdown-item(href="#") Remove
+                                    // END dropdown
+                                    p.mb-0
+                                        small
+                                            em.ion-record.text-danger.mr-2
+                                        small.text-muted
+                                            strong.mr-2 Completed:
+                                            span Fri Oct 24 2017
+                            .cardbox
+                                .pb-1.bg-gradient-success.top-line
+                                .cardbox-body
+                                    .d-flex.flex-wrap
+                                        .mr-4
+                                            img.shadow-z5.thumb48.rounded(src="img/user/06.jpg", alt="user")
+                                        div
+                                            p.my-1: strong Tim Hopkins
+                                            small Address, 123 Route
+                                        .ml-auto.mr-0.mt-0.mr-lg-auto.ml-lg-0.mt-lg-4.ml-xl-auto.mr-xl-0.mt-xl-0
+                                            span.budget.p-2.badge.badge-success $ 1555
+block vendor_css
+    // Dragula
+    link(rel='stylesheet', href='vendor/dragula/dist/dragula.css')
+block vendor_js
+    // Dragula
+    script(src='vendor/dragula/dist/dragula.js')
