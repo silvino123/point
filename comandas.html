@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Bootstrap Admin Template">
+    <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+    <title>Dasha - Bootstrap Admin Template</title>
+    <!-- Vendor styles-->
+    <!-- Animate.CSS-->
+    <link rel="stylesheet" href="vendor/animate.css/animate.css">
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Ionicons-->
+    <link rel="stylesheet" href="vendor/ionicons/css/ionicons.css">
+    <!-- Material Colors-->
+    <link rel="stylesheet" href="vendor/material-colors/dist/colors.css">
+    <!-- Dragula-->
+    <link rel="stylesheet" href="vendor/dragula/dist/dragula.css">
+    <!-- Application styles-->
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body >
+    <div >
+      <!-- top navbar-->
+      <header class="header-container" style="margin-left:0px">
+        <nav>
+          <ul class="d-lg-none">
+            <!-- <li><a class="sidebar-toggler menu-link menu-link-close" href="#"><span><em></em></span></a></li> -->
+          </ul>
+          <ul class="d-none d-sm-block">
+            <li><a class="covermode-toggler menu-link menu-link-close" href="#"><span><em></em></span></a></li>
+          </ul>
+       
+          <h2 class="header-title" style="margin-left:45%" >Comandas</h2>
+          <ul class="float-right">
+            <li class="dropdown"><a class="dropdown-toggle has-badge" href="#" data-toggle="dropdown"><img class="header-user-image" src="img/user/01.jpg" alt="header-user-image"><sup class="badge bg-danger"></sup></a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-scale">
+                <h6 class="dropdown-header">User menu</h6>
+                <!-- <a class="dropdown-item" href="#"><em class="ion-ios-gear-outline icon-lg text-primary"></em>Settings</a> -->
+                <div class="dropdown-divider" role="presentation"></div><a class="dropdown-item" href="user.login.html"><em class="ion-log-out icon-lg text-primary"></em>Logoff</a>
+              </div>
+            </li>
+            <!-- <li class="dropdown"><a class="dropdown-toggle has-badge" href="#" data-toggle="dropdown"><em class="ion-ios-keypad"></em></a> -->
+              <div class="dropdown-menu dropdown-menu-right dropdown-scale dropdown-card">
+                <div class="p-3">
+                  <div class="d-flex mb-3">
+                    <div class="wd-xs mr-3">
+                      <div class="card bg-gradient-primary border-0">
+                        <div class="card-body text-white text-center">
+                          <div class="mb-1"><em class="ion-stats-bars icon-2x"></em></div><small class="text-bold">Stats</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="wd-xs">
+                      <div class="card bg-gradient-info border-0">
+                        <div class="card-body text-white text-center">
+                          <div class="mb-1"><em class="ion-map icon-2x"></em></div><small class="text-bold">Places</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex">
+                    <div class="wd-xs mr-3">
+                      <div class="card bg-gradient-warning border-0">
+                        <div class="card-body text-white text-center">
+                          <div class="mb-1"><em class="ion-clock icon-2x"></em></div><small class="text-bold">Events</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="wd-xs">
+                      <div class="card bg-gradient-danger border-0">
+                        <div class="card-body text-white text-center">
+                          <div class="mb-1"><em class="ion-plane icon-2x"></em></div><small class="text-bold">Flights</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- <li><a id="header-search" href="#"><em class="ion-ios-search-strong"></em></a></li> -->
+            <!-- <li><a id="header-settings" href="#"><em class="ion-more"></em></a></li> -->
+          </ul>
+        </nav>
+      </header>
+      <!-- sidebar-->
+      
+      <!-- <div class="sidebar-layout-obfuscator"></div> -->
+      <!-- Main section-->
+      <main >
+        <!-- Page content-->
+        <section class="section-container">
+          <div class="container container-lg">
+            <div class="d-flex">
+              <div class="mr-auto mb-3 mt-2">
+                <button class="btn btn-info btm-sm btn-circle" type="button" data-dismiss="modal1" title="Agregar"><em class="ion-plus"></em></button>
+              </div>
+              
+            </div>
+            <form class="mb-3">
+              <div class="form-row align-items-center">
+                <div class="col-8">
+                  <!-- <input class="form-control" type="text" placeholder="Filter tasks..."> -->
+                </div>
+                <div class="col-4">
+                  <!-- <select class="custom-select fw">
+                    <option value="">Select state</option>
+                    <option value="">Pending</option>
+                    <option value="">In Progress</option>
+                    <option value="">Done</option>
+                  </select> -->
+                </div>
+              </div>
+            </form>
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="cardbox">
+                  <div class="cardbox-heading">
+                    <div class="total float-right">$ 1.000</div>
+                    <h3 class="cardbox-title">Pending</h3>
+                  </div>
+                  <div class="cardbox-body">
+                    <div  style="min-height:50px;">
+                      <div class="cardbox">
+                        <div class="pb-1 bg-gradient-primary top-line"></div>
+                        <div class="cardbox-body">
+                          <div class="d-flex flex-wrap">
+                            <div class="mr-4"><img class="shadow-z5 thumb48 rounded" src="img/user/01.jpg" alt="user"></div>
+                            <div>
+                              <p class="my-1"><strong>Sia Rhodes</strong></p><small>Address, 123 Route</small>
+                            </div>
+                            <div class="ml-auto mr-0 mt-0 mr-lg-auto ml-lg-0 mt-lg-4 ml-xl-auto mr-xl-0 mt-xl-0"><span class="budget p-2 badge badge-primary">$ 1555</span></div>
+                          </div>
+                        </div>
+                        <div class="cardbox-footer">
+                          <!-- START dropdown-->
+                          <div class="float-right dropdown">
+                            <button class="btn btn-flat btn-flat-icon" type="button" data-toggle="dropdown"><em class="ion-android-more-horizontal"></em></button>
+                            <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"><a class="dropdown-item" href="#">Add meeting</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item" href="#">Remove</a></div>
+                          </div>
+                          <!-- END dropdown-->
+                          <p class="mb-0"><small><em class="ion-record text-danger mr-2"></em></small><small class="text-muted"><strong class="mr-2">1 Task overdue</strong></small></p>
+                        </div>
+                      </div>
+                      <div class="cardbox">
+                        <div class="pb-1 bg-gradient-primary top-line"></div>
+                        <div class="cardbox-body">
+                          <div class="d-flex flex-wrap">
+                            <div class="mr-4"><img class="shadow-z5 thumb48 rounded" src="img/user/02.jpg" alt="user"></div>
+                            <div>
+                              <p class="my-1"><strong>Kenzi Barnett</strong></p><small>Address, 123 Route</small>
+                            </div>
+                            <div class="ml-auto mr-0 mt-0 mr-lg-auto ml-lg-0 mt-lg-4 ml-xl-auto mr-xl-0 mt-xl-0"><span class="budget p-2 badge badge-primary">$ 1555</span></div>
+                          </div>
+                        </div>
+                        <div class="cardbox-footer">
+                          <!-- START dropdown-->
+                          <div class="float-right dropdown">
+                            <button class="btn btn-flat btn-flat-icon" type="button" data-toggle="dropdown"><em class="ion-android-more-horizontal"></em></button>
+                            <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"><a class="dropdown-item" href="#">Add meeting</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item" href="#">Remove</a></div>
+                          </div>
+                          <!-- END dropdown-->
+                          <p class="mb-0"><small><em class="ion-record text-danger mr-2"></em></small><small class="text-muted"><strong class="mr-2">Added:</strong><span>Fri Oct 24 2017</span></small></p>
+                        </div>
+                      </div>
+                      <div class="cardbox">
+                        <div class="pb-1 bg-gradient-primary top-line"></div>
+                        <div class="cardbox-body">
+                          <div class="d-flex flex-wrap">
+                            <div class="mr-4"><img class="shadow-z5 thumb48 rounded" src="img/user/03.jpg" alt="user"></div>
+                            <div>
+                              <p class="my-1"><strong>Sam Hughes</strong></p><small>Address, 123 Route</small>
+                            </div>
+                            <div class="ml-auto mr-0 mt-0 mr-lg-auto ml-lg-0 mt-lg-4 ml-xl-auto mr-xl-0 mt-xl-0"><span class="budget p-2 badge badge-primary">$ 1555</span></div>
+                          </div>
+                        </div>
+                        <div class="cardbox-footer">
+                          <!-- START dropdown-->
+                          <div class="float-right dropdown">
+                            <button class="btn btn-flat btn-flat-icon" type="button" data-toggle="dropdown"><em class="ion-android-more-horizontal"></em></button>
+                            <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"><a class="dropdown-item" href="#">Add meeting</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item" href="#">Remove</a></div>
+                          </div>
+                          <!-- END dropdown-->
+                          <p class="mb-0"><small><em class="ion-record text-info mr-2"></em></small><small class="text-muted"><strong class="mr-2">Review schedule</strong></small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="cardbox">
+                  <div class="cardbox-heading">
+                    <div class="total float-right">$ 1.000</div>
+                    <h3 class="cardbox-title">In Progress</h3>
+                  </div>
+                  <div class="cardbox-body">
+                    <div  style="min-height:50px;">
+                      <div class="cardbox">
+                        <div class="pb-1 bg-gradient-info top-line"></div>
+                        <div class="cardbox-body">
+                          <div class="d-flex flex-wrap">
+                            <div class="mr-4"><img class="shadow-z5 thumb48 rounded" src="img/user/05.jpg" alt="user"></div>
+                            <div>
+                              <p class="my-1"><strong>Erika Carroll</strong></p><small>Address, 123 Route</small>
+                            </div>
+                            <div class="ml-auto mr-0 mt-0 mr-lg-auto ml-lg-0 mt-lg-4 ml-xl-auto mr-xl-0 mt-xl-0"><span class="budget p-2 badge badge-info">$ 1555</span></div>
+                          </div>
+                        </div>
+                        <div class="cardbox-footer">
+                          <!-- START dropdown-->
+                          <div class="float-right dropdown">
+                            <button class="btn btn-flat btn-flat-icon" type="button" data-toggle="dropdown"><em class="ion-android-more-horizontal"></em></button>
+                            <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"><a class="dropdown-item" href="#">Add meeting</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item" href="#">Remove</a></div>
+                          </div>
+                          <!-- END dropdown-->
+                          <p class="mb-0"><small><em class="ion-record text-danger mr-2"></em></small><small class="text-muted"><strong class="mr-2">Pending contact</strong></small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="cardbox">
+                  <div class="cardbox-heading">
+                    <div class="total float-right">$ 1.000</div>
+                    <h3 class="cardbox-title">Done</h3>
+                  </div>
+                  <div class="cardbox-body">
+                    <div  style="min-height:50px;">
+                      <div class="cardbox">
+                        <div class="pb-1 bg-gradient-success top-line"></div>
+                        <div class="cardbox-body">
+                          <div class="d-flex flex-wrap">
+                            <div class="mr-4"><img class="shadow-z5 thumb48 rounded" src="img/user/02.jpg" alt="user"></div>
+                            <div>
+                              <p class="my-1"><strong>Curtis Vasquez</strong></p><small>Address, 123 Route</small>
+                            </div>
+                            <div class="ml-auto mr-0 mt-0 mr-lg-auto ml-lg-0 mt-lg-4 ml-xl-auto mr-xl-0 mt-xl-0"><span class="budget p-2 badge badge-success">$ 1555</span></div>
+                          </div>
+                        </div>
+                        <div class="cardbox-footer">
+                          <!-- START dropdown-->
+                          <div class="float-right dropdown">
+                            <button class="btn btn-flat btn-flat-icon" type="button" data-toggle="dropdown"><em class="ion-android-more-horizontal"></em></button>
+                            <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"><a class="dropdown-item" href="#">Add meeting</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item" href="#">Remove</a></div>
+                          </div>
+                          <!-- END dropdown-->
+                          <p class="mb-0"><small><em class="ion-record text-danger mr-2"></em></small><small class="text-muted"><strong class="mr-2">Completed:</strong><span>Fri Oct 24 2017</span></small></p>
+                        </div>
+                      </div>
+                      <div class="cardbox">
+                        <div class="pb-1 bg-gradient-success top-line"></div>
+                        <div class="cardbox-body">
+                          <div class="d-flex flex-wrap">
+                            <div class="mr-4"><img class="shadow-z5 thumb48 rounded" src="img/user/06.jpg" alt="user"></div>
+                            <div>
+                              <p class="my-1"><strong>Tim Hopkins</strong></p><small>Address, 123 Route</small>
+                            </div>
+                            <div class="ml-auto mr-0 mt-0 mr-lg-auto ml-lg-0 mt-lg-4 ml-xl-auto mr-xl-0 mt-xl-0"><span class="budget p-2 badge badge-success">$ 1555</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Page footer-->
+        
+      </main>
+    </div>
+    <!-- Search template-->
+    <div class="modal modal-top fade modal-search" tabindex="-1" role="dialog" >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="modal-search-form">
+              <form action="#">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-flat" type="button" data-dismiss="modal"><em class="ion-arrow-left-c icon-lg text-muted"></em></button>
+                  </div>
+                  <input class="form-control header-input-search" type="text" placeholder="Search..">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Search template-->
+    <!-- Settings template-->
+    <div class="modal-settings modal modal-right fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="mt-0 modal-title"><span>Settings</span></h4>
+            <div class="float-right clickable" data-dismiss="modal"><em class="ion-close-round text-soft"></em></div>
+          </div>
+          <div class="modal-body">
+            <p>Dark sidebar</p>
+            <div class="d-flex flex-wrap mb-3">
+              <div class="setting-color">
+                <label class="preview-theme-default">
+                  <input type="radio" checked name="setting-theme" value="theme-default"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+              <div class="setting-color">
+                <label class="preview-theme-2">
+                  <input type="radio" name="setting-theme" value="theme-2"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+              <div class="setting-color">
+                <label class="preview-theme-3">
+                  <input type="radio" name="setting-theme" value="theme-3"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+              <div class="setting-color">
+                <label class="preview-theme-4">
+                  <input type="radio" name="setting-theme" value="theme-4"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+              <div class="setting-color">
+                <label class="preview-theme-5">
+                  <input type="radio" name="setting-theme" value="theme-5"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+              <div class="setting-color">
+                <label class="preview-theme-6">
+                  <input type="radio" name="setting-theme" value="theme-6"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+            </div>
+            <p>White sidebar</p>
+            <div class="d-flex flex-wrap mb-3">
+              <div class="setting-color">
+                <label class="preview-theme-default">
+                  <input type="radio" name="setting-theme" value="theme-default-w"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+              <div class="setting-color">
+                <label class="preview-theme-2">
+                  <input type="radio" name="setting-theme" value="theme-2-w"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+              <div class="setting-color">
+                <label class="preview-theme-3">
+                  <input type="radio" name="setting-theme" value="theme-3-w"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+              <div class="setting-color">
+                <label class="preview-theme-4">
+                  <input type="radio" name="setting-theme" value="theme-4-w"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+              <div class="setting-color">
+                <label class="preview-theme-5">
+                  <input type="radio" name="setting-theme" value="theme-5-w"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+              <div class="setting-color">
+                <label class="preview-theme-6">
+                  <input type="radio" name="setting-theme" value="theme-6-w"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+            </div>
+            <p>Sidebar Gradients</p>
+            <div class="d-flex flex-wrap mb-3">
+              <div class="setting-color">
+                <label class="preview-theme-gradient-1">
+                  <input type="radio" name="setting-theme" value="theme-gradient-sidebar-1"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+              <div class="setting-color">
+                <label class="preview-theme-gradient-2">
+                  <input type="radio" name="setting-theme" value="theme-gradient-sidebar-2"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+              <div class="setting-color">
+                <label class="preview-theme-gradient-3">
+                  <input type="radio" name="setting-theme" value="theme-gradient-sidebar-3"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+              <div class="setting-color">
+                <label class="preview-theme-gradient-4">
+                  <input type="radio" name="setting-theme" value="theme-gradient-sidebar-4"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+              <div class="setting-color">
+                <label class="preview-theme-gradient-5">
+                  <input type="radio" name="setting-theme" value="theme-gradient-sidebar-5"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+              <div class="setting-color">
+                <label class="preview-theme-gradient-6">
+                  <input type="radio" name="setting-theme" value="theme-gradient-sidebar-6"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+            </div>
+            <p>Header Gradients</p>
+            <div class="d-flex flex-wrap mb-3">
+              <div class="setting-color">
+                <label class="preview-theme-gradient-1">
+                  <input type="radio" name="setting-theme" value="theme-gradient-header-1"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+              <div class="setting-color">
+                <label class="preview-theme-gradient-2">
+                  <input type="radio" name="setting-theme" value="theme-gradient-header-2"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+              <div class="setting-color">
+                <label class="preview-theme-gradient-3">
+                  <input type="radio" name="setting-theme" value="theme-gradient-header-3"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+              <div class="setting-color">
+                <label class="preview-theme-gradient-4">
+                  <input type="radio" name="setting-theme" value="theme-gradient-header-4"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+              <div class="setting-color">
+                <label class="preview-theme-gradient-5">
+                  <input type="radio" name="setting-theme" value="theme-gradient-header-5"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+              <div class="setting-color">
+                <label class="preview-theme-gradient-6">
+                  <input type="radio" name="setting-theme" value="theme-gradient-header-6"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+            </div>
+            <p>Dark content</p>
+            <div class="d-flex flex-wrap mb-3">
+              <div class="setting-color">
+                <label class="preview-theme-dark">
+                  <input type="radio" name="setting-theme" value="theme-dark"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+              <div class="setting-color">
+                <label class="preview-theme-dark-2">
+                  <input type="radio" name="setting-theme" value="theme-dark-2"><span class="ion-checkmark-round"></span><span class="square24 b"></span>
+                </label>
+              </div>
+            </div>
+            <hr>
+            <div class="custom-control custom-checkbox mb-3">
+              <input class="custom-control-input" id="sidebar-cover" type="checkbox">
+              <label class="custom-control-label" for="sidebar-cover">Sidebar Cover</label>
+            </div>
+            <div class="custom-control custom-checkbox mb-3">
+              <input class="custom-control-input" id="sidebar-showtoolbar" type="checkbox" checked>
+              <label class="custom-control-label" for="sidebar-showtoolbar">Sidebar profile</label>
+            </div>
+            <div class="custom-control custom-checkbox mb-3">
+              <input class="custom-control-input" id="fixed-footer" type="checkbox">
+              <label class="custom-control-label" for="fixed-footer">Fixed Footer</label>
+            </div>
+            <hr>
+            <button class="btn btn-secondary" type="button" data-toggle-fullscreen="">Toggle fullscreen</button>
+            <hr>
+            <p>Change language</p>
+            <!-- START Language list-->
+            <select class="language-select custom-select form-control">
+              <option value="en" selected="">English</option>
+              <option value="es">Spanish</option>
+              <option value="fr">French</option>
+            </select>
+            <!-- END Language list-->
+            <div class="mt-3" data-localize="translate.EXAMPLE">This is an example text using English as selected language.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Settings template-->
+    <!-- Modernizr-->
+    <script src="vendor/modernizr/modernizr.custom.js"></script>
+    <!-- PaceJS-->
+    <script src="vendor/pace-progress/pace.min.js"></script>
+    <!-- jQuery-->
+    <script src="vendor/jquery/dist/jquery.js"></script>
+    <!-- Bootstrap-->
+    <script src="vendor/popper.js/dist/umd/popper.min.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- Material Colors-->
+    <script src="vendor/material-colors/dist/colors.js"></script>
+    <!-- Screenfull-->
+    <script src="vendor/screenfull/dist/screenfull.js"></script>
+    <!-- jQuery Localize-->
+    <script src="vendor/jquery-localize/dist/jquery.localize.js"></script>
+    <!-- Dragula-->
+    <script src="vendor/dragula/dist/dragula.js"></script>
+    <!-- App script-->
+    <script src="js/app.js"></script>
+  </body>
+</html>
