@@ -20,8 +20,8 @@
     <!-- Application styles-->
     <link rel="stylesheet" href="css/app.css">
   </head>
-  <body >
-    <div >
+  <body  style="overflow-y:hidden" >
+    <div class="layout-container" >
       <!-- top navbar-->
       <header class="header-container" style="margin-left:0px">
         <nav>
@@ -88,191 +88,159 @@
       
       <!-- <div class="sidebar-layout-obfuscator"></div> -->
       <!-- Main section-->
-      <main >
+      <main class="main-container" style="margin-left:0px" >
+          <div class="layout-container">
         <!-- Page content-->
-        <section class="section-container">
-          <div class="container container-lg">
-            <div class="d-flex">
-              <div class="mr-auto mb-3 mt-2">
-                <button class="btn btn-info btm-sm btn-circle" type="button" data-dismiss="modal1" title="Agregar"><em class="ion-plus"></em></button>
-              </div>
-              
-            </div>
-            <form class="mb-3">
-              <div class="form-row align-items-center">
-                <div class="col-8">
-                  <!-- <input class="form-control" type="text" placeholder="Filter tasks..."> -->
+          <section class="section-container">
+            <div class="container container-lg">
+              <div class="d-flex">
+                <div class="mr-auto mb-3 mt-2">
+                    <button class="btn btn-info btm-sm btn-circle" type="button" data-toggle="modal" data-target=".demo-modal-form" title="Agregar"><em class="ion-plus"></em></button>
                 </div>
-                <div class="col-4">
-                  <!-- <select class="custom-select fw">
-                    <option value="">Select state</option>
-                    <option value="">Pending</option>
-                    <option value="">In Progress</option>
-                    <option value="">Done</option>
-                  </select> -->
-                </div>
+                
               </div>
-            </form>
-            <div class="row">
-              <div class="col-lg-4">
-                <div class="cardbox">
-                  <div class="cardbox-heading">
-                    <div class="total float-right">$ 1.000</div>
-                    <h3 class="cardbox-title">Pending</h3>
+              <form class="mb-3">
+                <div class="form-row align-items-center">
+                  <div class="col-8">
+                    <!-- <input class="form-control" type="text" placeholder="Filter tasks..."> -->
                   </div>
-                  <div class="cardbox-body">
-                    <div  style="min-height:50px;">
-                      <div class="cardbox">
-                        <div class="pb-1 bg-gradient-primary top-line"></div>
-                        <div class="cardbox-body">
-                          <div class="d-flex flex-wrap">
-                            <div class="mr-4"><img class="shadow-z5 thumb48 rounded" src="img/user/01.jpg" alt="user"></div>
-                            <div>
-                              <p class="my-1"><strong>Sia Rhodes</strong></p><small>Address, 123 Route</small>
+                  <div class="col-4">
+                    <!-- <select class="custom-select fw">
+                      <option value="">Select state</option>
+                      <option value="">Pending</option>
+                      <option value="">In Progress</option>
+                      <option value="">Done</option>
+                    </select> -->
+                  </div>
+                </div>
+              </form>
+              <div class="row">
+                <div class="col-lg-4">
+                  <section id="pendientes">
+                  <div class="cardbox">
+                    <div class="cardbox-heading">
+                      <div class="total float-right"></div>
+                      <h3 class="cardbox-title">Pendientes</h3>
+                    </div>
+                    <div class="cardbox-body">
+                      <div  style="min-height:50px;">
+                        <div class="cardbox">
+                          <div class="pb-1 bg-danger top-line"></div>
+                          <div class="cardbox-body">
+                            <div class="d-flex flex-wrap">
+                              <div class="mr-4"><img class="rounded-circle thumb64" src="img/comanda2.png" ></div>
+                              <div>
+                                <p class="my-1"><strong>Comanda # </strong>23</p><small>Address, 123 Route</small>
+                              </div>
+                              <div class="ml-auto mr-0 mt-0 mr-lg-auto ml-lg-0 mt-lg-4 ml-xl-auto mr-xl-0 mt-xl-0"><span class="budget p-2 badge badge-primary">$600</span></div>
                             </div>
-                            <div class="ml-auto mr-0 mt-0 mr-lg-auto ml-lg-0 mt-lg-4 ml-xl-auto mr-xl-0 mt-xl-0"><span class="budget p-2 badge badge-primary">$ 1555</span></div>
+                          </div>
+                          <div class="cardbox-footer">
+                            <!-- START dropdown-->
+                            <div class="float-right dropdown">
+                                <button class="btn btn-flat btn-flat-icon" type="button" data-toggle="dropdown"><em class="ion-android-more-horizontal"></em></button>
+                                <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu" ><a class="dropdown-item" data-toggle="modal" data-target=".modal-edit">Editar</a><a class="dropdown-item" href="#">Eliminar</a></div>
+                              </div>
+                            <!-- END dropdown-->
+                            <p class="mb-0"><small><em class="ion-record text-danger mr-2"></em></small><small class="text-muted"><strong class="mr-2">Mesa # 3</strong></small></p>
                           </div>
                         </div>
-                        <div class="cardbox-footer">
-                          <!-- START dropdown-->
-                          <div class="float-right dropdown">
-                            <button class="btn btn-flat btn-flat-icon" type="button" data-toggle="dropdown"><em class="ion-android-more-horizontal"></em></button>
-                            <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"><a class="dropdown-item" href="#">Add meeting</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item" href="#">Remove</a></div>
-                          </div>
-                          <!-- END dropdown-->
-                          <p class="mb-0"><small><em class="ion-record text-danger mr-2"></em></small><small class="text-muted"><strong class="mr-2">1 Task overdue</strong></small></p>
-                        </div>
+                     
                       </div>
-                      <div class="cardbox">
-                        <div class="pb-1 bg-gradient-primary top-line"></div>
-                        <div class="cardbox-body">
-                          <div class="d-flex flex-wrap">
-                            <div class="mr-4"><img class="shadow-z5 thumb48 rounded" src="img/user/02.jpg" alt="user"></div>
-                            <div>
-                              <p class="my-1"><strong>Kenzi Barnett</strong></p><small>Address, 123 Route</small>
+                    </div>
+                  </div>
+                  </section>
+                </div>
+                <div class="col-lg-4">
+                  <section id="proceso">
+                  <div class="cardbox">
+                    <div class="cardbox-heading">
+                      <div class="total float-right"></div>
+                      <h3 class="cardbox-title">En Proceso</h3>
+                    </div>
+                    <div class="cardbox-body">
+                      <div  style="min-height:50px;">
+                        <div class="cardbox">
+                          <div class="pb-1 bg-info top-line"></div>
+                          <div class="cardbox-body">
+                            <div class="d-flex flex-wrap">
+                              <div class="mr-4"><img class="rounded-circle thumb64" src="img/comanda2.png"></div>
+                              <div>
+                                <p class="my-1"><strong>Erika Carroll</strong></p><small>Address, 123 Route</small>
+                              </div>
+                              <div class="ml-auto mr-0 mt-0 mr-lg-auto ml-lg-0 mt-lg-4 ml-xl-auto mr-xl-0 mt-xl-0"><span class="budget p-2 badge badge-info">$600</span></div>
                             </div>
-                            <div class="ml-auto mr-0 mt-0 mr-lg-auto ml-lg-0 mt-lg-4 ml-xl-auto mr-xl-0 mt-xl-0"><span class="budget p-2 badge badge-primary">$ 1555</span></div>
                           </div>
-                        </div>
-                        <div class="cardbox-footer">
-                          <!-- START dropdown-->
-                          <div class="float-right dropdown">
-                            <button class="btn btn-flat btn-flat-icon" type="button" data-toggle="dropdown"><em class="ion-android-more-horizontal"></em></button>
-                            <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"><a class="dropdown-item" href="#">Add meeting</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item" href="#">Remove</a></div>
-                          </div>
-                          <!-- END dropdown-->
-                          <p class="mb-0"><small><em class="ion-record text-danger mr-2"></em></small><small class="text-muted"><strong class="mr-2">Added:</strong><span>Fri Oct 24 2017</span></small></p>
-                        </div>
-                      </div>
-                      <div class="cardbox">
-                        <div class="pb-1 bg-gradient-primary top-line"></div>
-                        <div class="cardbox-body">
-                          <div class="d-flex flex-wrap">
-                            <div class="mr-4"><img class="shadow-z5 thumb48 rounded" src="img/user/03.jpg" alt="user"></div>
-                            <div>
-                              <p class="my-1"><strong>Sam Hughes</strong></p><small>Address, 123 Route</small>
+                          <div class="cardbox-footer">
+                            <!-- START dropdown-->
+                            <div class="float-right dropdown">
+                               
+                             
                             </div>
-                            <div class="ml-auto mr-0 mt-0 mr-lg-auto ml-lg-0 mt-lg-4 ml-xl-auto mr-xl-0 mt-xl-0"><span class="budget p-2 badge badge-primary">$ 1555</span></div>
+                            <!-- END dropdown-->
+                            <p class="mb-0"><small><em class="ion-record text-info mr-2"></em></small><small class="text-muted"><strong class="mr-2">Mesero 2</strong></small></p>
                           </div>
-                        </div>
-                        <div class="cardbox-footer">
-                          <!-- START dropdown-->
-                          <div class="float-right dropdown">
-                            <button class="btn btn-flat btn-flat-icon" type="button" data-toggle="dropdown"><em class="ion-android-more-horizontal"></em></button>
-                            <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"><a class="dropdown-item" href="#">Add meeting</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item" href="#">Remove</a></div>
-                          </div>
-                          <!-- END dropdown-->
-                          <p class="mb-0"><small><em class="ion-record text-info mr-2"></em></small><small class="text-muted"><strong class="mr-2">Review schedule</strong></small></p>
                         </div>
                       </div>
                     </div>
                   </div>
+                  </section>
                 </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="cardbox">
-                  <div class="cardbox-heading">
-                    <div class="total float-right">$ 1.000</div>
-                    <h3 class="cardbox-title">In Progress</h3>
-                  </div>
-                  <div class="cardbox-body">
-                    <div  style="min-height:50px;">
-                      <div class="cardbox">
-                        <div class="pb-1 bg-gradient-info top-line"></div>
-                        <div class="cardbox-body">
-                          <div class="d-flex flex-wrap">
-                            <div class="mr-4"><img class="shadow-z5 thumb48 rounded" src="img/user/05.jpg" alt="user"></div>
-                            <div>
-                              <p class="my-1"><strong>Erika Carroll</strong></p><small>Address, 123 Route</small>
+                <div class="col-lg-4">
+                  <section id="terminado">
+                  <div class="cardbox">
+                    <div class="cardbox-heading">
+                      <div class="total float-right"></div>
+                      <h3 class="cardbox-title">Terminado</h3>
+                    </div>
+                    <div class="cardbox-body">
+                      <div  style="min-height:50px;">
+                        <div class="cardbox">
+                          <div class="pb-1 bg-success top-line"></div>
+                          <div class="cardbox-body">
+                            <div class="d-flex flex-wrap">
+                              <div class="mr-4"><img class="rounded-circle thumb64" src="img/comanda2.png"></div>
+                              <div>
+                                <p class="my-1"><strong>Curtis Vasquez</strong></p><small>Address, 123 Route</small>
+                              </div>
+                              <div class="ml-auto mr-0 mt-0 mr-lg-auto ml-lg-0 mt-lg-4 ml-xl-auto mr-xl-0 mt-xl-0"><span class="budget p-2 badge badge-success"></span></div>
                             </div>
-                            <div class="ml-auto mr-0 mt-0 mr-lg-auto ml-lg-0 mt-lg-4 ml-xl-auto mr-xl-0 mt-xl-0"><span class="budget p-2 badge badge-info">$ 1555</span></div>
+                          </div>
+                          <div class="cardbox-footer">
+                            <!-- START dropdown-->
+                            <div class="float-right dropdown">
+                                <button class="btn btn-flat btn-flat-icon" type="button" ><em class="ion-android-arrow-dropright-circle"></em></button>
+                             
+                            </div>
+                            <!-- END dropdown-->
+                            <p class="mb-0"><small><em class="ion-record text-success mr-2"></em></small><small class="text-muted"><strong class="mr-2">Mesero 1</strong><span></span></small></p>
                           </div>
                         </div>
-                        <div class="cardbox-footer">
-                          <!-- START dropdown-->
-                          <div class="float-right dropdown">
-                            <button class="btn btn-flat btn-flat-icon" type="button" data-toggle="dropdown"><em class="ion-android-more-horizontal"></em></button>
-                            <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"><a class="dropdown-item" href="#">Add meeting</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item" href="#">Remove</a></div>
-                          </div>
-                          <!-- END dropdown-->
-                          <p class="mb-0"><small><em class="ion-record text-danger mr-2"></em></small><small class="text-muted"><strong class="mr-2">Pending contact</strong></small></p>
-                        </div>
+                       
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="cardbox">
-                  <div class="cardbox-heading">
-                    <div class="total float-right">$ 1.000</div>
-                    <h3 class="cardbox-title">Done</h3>
-                  </div>
-                  <div class="cardbox-body">
-                    <div  style="min-height:50px;">
-                      <div class="cardbox">
-                        <div class="pb-1 bg-gradient-success top-line"></div>
-                        <div class="cardbox-body">
-                          <div class="d-flex flex-wrap">
-                            <div class="mr-4"><img class="shadow-z5 thumb48 rounded" src="img/user/02.jpg" alt="user"></div>
-                            <div>
-                              <p class="my-1"><strong>Curtis Vasquez</strong></p><small>Address, 123 Route</small>
-                            </div>
-                            <div class="ml-auto mr-0 mt-0 mr-lg-auto ml-lg-0 mt-lg-4 ml-xl-auto mr-xl-0 mt-xl-0"><span class="budget p-2 badge badge-success">$ 1555</span></div>
-                          </div>
-                        </div>
-                        <div class="cardbox-footer">
-                          <!-- START dropdown-->
-                          <div class="float-right dropdown">
-                            <button class="btn btn-flat btn-flat-icon" type="button" data-toggle="dropdown"><em class="ion-android-more-horizontal"></em></button>
-                            <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"><a class="dropdown-item" href="#">Add meeting</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item" href="#">Remove</a></div>
-                          </div>
-                          <!-- END dropdown-->
-                          <p class="mb-0"><small><em class="ion-record text-danger mr-2"></em></small><small class="text-muted"><strong class="mr-2">Completed:</strong><span>Fri Oct 24 2017</span></small></p>
-                        </div>
-                      </div>
-                      <div class="cardbox">
-                        <div class="pb-1 bg-gradient-success top-line"></div>
-                        <div class="cardbox-body">
-                          <div class="d-flex flex-wrap">
-                            <div class="mr-4"><img class="shadow-z5 thumb48 rounded" src="img/user/06.jpg" alt="user"></div>
-                            <div>
-                              <p class="my-1"><strong>Tim Hopkins</strong></p><small>Address, 123 Route</small>
-                            </div>
-                            <div class="ml-auto mr-0 mt-0 mr-lg-auto ml-lg-0 mt-lg-4 ml-xl-auto mr-xl-0 mt-xl-0"><span class="budget p-2 badge badge-success">$ 1555</span></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    </section>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-        <!-- Page footer-->
+             <br>
+          <br>
+          </section>
+          
+          <!-- Page footer-->
+         
+         <br>
+          <br>
+        </main>
         
-      </main>
+         <footer class="footer-container" style="position:fixed">
+            <div class="d-flex justify-content-between fh">
+              <a class="footer-icon" href="#pendientes"><em class="ion-android-list" ></em><span >Pendientes</span></a>
+              <a class="footer-icon" href="#proceso"><em class="ion-ios-time" ></em><span >En Proceso</span></a>
+              <a class="footer-icon" href="#terminado"><em class="ion-checkmark-circled" ></em><span >Terminado</span></a>
+              
+          </footer>
     </div>
     <!-- Search template-->
     <div class="modal modal-top fade modal-search" tabindex="-1" role="dialog" >
@@ -477,6 +445,58 @@
         </div>
       </div>
     </div>
+    <div class="modal fade demo-modal-form">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="mt-0 modal-title">Form modal</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label class="control-label" for="recipient">To:</label>
+                  <input class="form-control" id="recipient" type="text">
+                </div>
+                <div class="form-group">
+                  <label class="control-label" for="message-content">Message content:</label>
+                  <textarea class="form-control" id="message-content"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+              <button class="btn btn-info" type="button">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade modal-edit">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="mt-0 modal-title">modal Editar</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label class="control-label" for="recipient">To:</label>
+                    <input class="form-control" id="recipient" type="text">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label" for="message-content">Message content:</label>
+                    <textarea class="form-control" id="message-content"></textarea>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                <button class="btn btn-info" type="button">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
     <!-- End Settings template-->
     <!-- Modernizr-->
     <script src="vendor/modernizr/modernizr.custom.js"></script>
